@@ -1,0 +1,15 @@
+<div class="col-md-6 col-lg-4 col-xl-3">
+    <div class="card text-center card-product">
+      <div class="card-product__img">
+        <ul class="card-product__imgOverlay">
+          <li><%= link_to "show", item_path(item) %> <i class="ti-search"></i> </li>
+
+        </ul>
+      </div>
+      <div class="card-body">
+        <p><%= item.category %></p>
+        <h4 class="card-product__title"><p><%= item.title %></p></h4>
+        <p class="card-product__price"><%= item.price %>€</p>
+      </div>
+    </div>
+  </div>
