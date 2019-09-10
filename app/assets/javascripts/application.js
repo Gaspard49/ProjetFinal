@@ -21,6 +21,7 @@
 //= require skrollr.min.js
 //= require owl-carousel/owl.carousel.min.js
 //= require jquery/nice-select/jquery.nice-select.min.js
+//= require ie7.js
 //= require jquery.ajaxchimp.min.js
 //= require mail-script.js
 //= require main.js
