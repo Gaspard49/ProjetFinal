@@ -2,7 +2,7 @@
     <div class="card text-center card-product">
       <div class="card-product__img">
           <%if item.picture.attached?%>
-          <%= image_tag item.picture, alt: 'picture' %>
+          <%= image_tag item.picture, alt: 'picture', :class =>"card-img" %>
           <% end %>
         <ul class="card-product__imgOverlay">
           <li><%= link_to "show", item_path(item) %> <i class="ti-search"></i> </li>
