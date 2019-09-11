@@ -1,5 +1,5 @@
 require_relative 'boot'
-
+require 'dotenv-rails'
 require 'rails/all'
 
 
