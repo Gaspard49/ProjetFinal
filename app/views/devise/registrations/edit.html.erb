@@ -5,7 +5,7 @@
 		<div class="container h-100">
 			<div class="blog-banner">
 				<div class="text-center">
-					<h1>Update Profiler</h1>
+					<h1>Update Profile</h1>
 					<nav aria-label="breadcrumb" class="banner-breadcrumb">
           </nav>
 				</div>
@@ -33,6 +33,15 @@
 						<h3>Update account</h3>
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, class: 'row login_form', id:"register_form") do |f| %>
            <%= render "devise/shared/error_messages", resource: resource %>	
+
+
+
+ 	          <div class="col-md-12 form-group">
+              <%= f.label :avatar, "Avatar" %><br />
+              <%= f.file_field :avatar, class: "form-control", placeholder:"Upload Avatar" %>		
+              </div>
+
+
 
            	<div class="col-md-12 form-group">
               <%= f.label :first_name, "First Name" %><br />
