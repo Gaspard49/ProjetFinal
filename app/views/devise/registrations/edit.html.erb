@@ -38,7 +38,7 @@
 
  	          <div class="col-md-12 form-group">
               <%= f.label :avatar, "Avatar" %><br />
-              <%= f.file_field :avatar, class: " file-upload", placeholder:"Upload Avatar" %>		
+              <%= f.file_field :avatar, class: " form-control-file", placeholder:"Upload Avatar" %>		
               </div>
 
 
@@ -96,9 +96,8 @@
                <%= f.submit "Update" , class:"button button-register w-100" %>
 							</div>
 					<% end %>
-      <%= render "devise/shared/links" %>
+           <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 					</div>
-          <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 				</div>
 			</div>
 		</div>
