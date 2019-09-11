@@ -9,7 +9,11 @@
 <div class="container py-4 my-2">
     <div class="row">
         <div class="col-md-4 pr-md-5">
+          <%if @user.avatar.attached?%>
+            <%= image_tag @user.avatar, class:"w-50 rounded border" ,alt: 'avatar' %>
+          <%else%>
             <img class="w-50 rounded border" src="https://cdn.bootstrapsnippet.net/assets/image/dummy-avatar.jpg" />
+          <%end%>
             <div class="pt-4 mt-2">             
             </div>
         </div>
