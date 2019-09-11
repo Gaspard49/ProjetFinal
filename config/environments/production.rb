@@ -63,6 +63,7 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "ProjetFinal_#{Rails.env}"
 
+  
   config.action_mailer.perform_caching = true
   config.action_mailer.default_url_options = { :host => 'projet-final-caen.herokuapp.com' }
 
