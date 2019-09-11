@@ -4,11 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 gem 'table_print'
 gem 'faker'
-<<<<<<< HEAD
-gem 'dotenv-rails', groups: [:development, :test]
-=======
 gem "aws-sdk-s3", require: false
->>>>>>> parent of 0d0244b... mailer
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
