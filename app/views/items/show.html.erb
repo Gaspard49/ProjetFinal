@@ -4,11 +4,14 @@
     <div class="container">
         <div class="row s_product_inner">
             <div class="col-lg-6">
-                <div class="owl-carousel owl-theme s_Product_carousel">
-                    <div class="single-prd-item">
-                        <img class="@image_tag" src="http://lorempixel.com/640/480/">
-                    </div>
-                </div>
+                    <%if @item.picture.attached?%>
+                    <%= image_tag @item.picture, alt: 'picture' %>
+                <%else%>
+                    <%= form_tag item_pictures_path(@item), multipart: true do %>
+                        <%= file_field_tag :picture %>
+                        <%= submit_tag "mettre à jour" %>
+                    <% end %>
+              <% end %>
             </div>
             <div class="col-lg-5 offset-lg-1">
                 <div class="s_product_text">
