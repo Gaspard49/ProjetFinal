@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-    def IndexError
-
+    def index
+        @items = Item.all
     end
 end
