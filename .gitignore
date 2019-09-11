@@ -6,8 +6,12 @@
 
 # Ignore bundler config.
 /.bundle
+<<<<<<< HEAD
 /.env
 
+=======
+.env
+>>>>>>> parent of 0d0244b... mailer
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*

@@ -82,9 +82,6 @@ GEM
       responders
       warden (~> 1.2.3)
     dotenv (2.7.5)
-    dotenv-rails (2.7.5)
-      dotenv (= 2.7.5)
-      railties (>= 3.2, < 6.1)
     erubi (1.8.0)
     execjs (2.7.0)
     faker (2.2.2)
@@ -221,7 +218,7 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
-  dotenv-rails
+  dotenv
   faker
   jbuilder (~> 2.5)
   jquery-rails
