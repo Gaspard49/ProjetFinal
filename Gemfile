@@ -5,7 +5,6 @@ ruby '2.5.1'
 gem 'table_print'
 gem 'faker'
 gem "aws-sdk-s3", require: false
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 
