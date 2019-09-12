@@ -6,7 +6,7 @@
           <% end %>
         <ul class="card-product__imgOverlay">
           <li><%= link_to "show", item_path(item) %> <i class="ti-search"></i> </li>
-         
+          <li> <%= button_to order_path(item), method: :post do %><i class="ti-shopping-cart"></i><% end %></li>
         </ul>
       </div>
       <div class="card-body">
