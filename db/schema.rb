@@ -58,11 +58,7 @@ ActiveRecord::Schema.define(version: 2019_09_12_122935) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-<<<<<<< HEAD
-    t.integer "status"
-=======
     t.boolean "status"
->>>>>>> 221bd0f0d736b6fc1c907ac202097421456ff274
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
