@@ -3,7 +3,14 @@ class OrdersController < ApplicationController
     before_action :set_cart, only: [:create]
 
     def index
+        puts "#" * 100
+        puts "salut"
+        puts "#" * 100
         
+    end
+
+    def show
+        @item = Item.all
     end
 
     def create 

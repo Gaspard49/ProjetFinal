@@ -53,9 +53,8 @@
             </ul>
 
             <ul class="nav-shop">
-              <li class="nav-item"><%= link_to '<i class="ti-shopping-cart"></i>'.html_safe, orders_path%></li>
-              <li class="nav-item"><%= link_to 'Buy now', orders_path</li>
-              <li class="nav-item"><a class="button button-header" href="#">Buy Now</a></li>
+              <li class="nav-item"><%= link_to '<i class="ti-shopping-cart"></i>'.html_safe, orders_path, controller: "orders" %></li>
+              <li class="nav-item"><%= link_to "Buy now", orders_path, class: "button button-header" %></li>
             </ul>
           </div>
         </div>
