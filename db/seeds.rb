@@ -13,8 +13,10 @@ Item.delete_all
 Order.delete_all
 ItemOrder.delete_all
 
-2.times do
-  User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 65), city: Faker::Address.city, zip_code:  Faker::Address.zip_code, address: Faker::Address.street_address ,password: 'password',)
+puts "Delete done!"
+
+10.times do
+  User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 65), city: Faker::Address.city, zip_code:  Faker::Address.zip_code, address: Faker::Address.street_address ,password: 'password')
 end
 
 10.times do
@@ -22,8 +24,9 @@ end
 end
 
 10.times do
-  ItemOrder.create(order_id: Order.all.sample.id, item_id: Item.all.sample.id)
+  Order.create(user_id: User.all.sample.id)
 end
+
 
 10.times do
   Order.create(user_id: User.all.sample.id)
