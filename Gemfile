@@ -7,6 +7,9 @@ gem 'faker'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'stripe'
 gem "aws-sdk-s3", require: false
+gem 'remotipart', github: 'mshibuya/remotipart'
+gem 'rails_admin', github: 'sferik/rails_admin'
+gem 'rails_admin_rollincode', '~> 1.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 gem 'devise'
