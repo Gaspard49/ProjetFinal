@@ -5,4 +5,6 @@ class Order < ApplicationRecord
     def total
         items.sum(&:price)
     end
+
+
 end
