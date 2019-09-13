@@ -24,10 +24,5 @@ end
 end
 
 5.times do
-  Order.create(user_id: User.all.sample.id)
-end
-
-
-10.times do
-  Order.create(user_id: User.all.sample.id)
+  Order.create(user_id: User.all.sample.id, status: false)
 end
