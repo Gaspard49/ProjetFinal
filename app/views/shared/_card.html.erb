@@ -1,9 +1,14 @@
 <div class="col-md-6 col-lg-4 col-xl-3">
     <div class="card text-center card-product">
       <div class="card-product__img">
+          <%if item.picture.attached?%>
+              <%= image_tag item.picture, alt: 'picture', :class =>"card-img" %>
+          <% else %>
+              <%=image_tag("product/product1.png", class: "card-img", alt: 'product1') %>
+          <% end %>
         <ul class="card-product__imgOverlay">
           <li><%= link_to "show", item_path(item) %> <i class="ti-search"></i> </li>
-
+          <li> <%= button_to orders_path(item), method: :post do %><i class="ti-shopping-cart"></i><% end %></li>
         </ul>
       </div>
       <div class="card-body">
