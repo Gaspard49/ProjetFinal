@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
     include CurrentCart
-    before_action :set_cart, only: [:create, :index]
+    before_action :set_cart, only: [:create, :index, :destroy]
 
     def index
     end
@@ -9,6 +9,11 @@ class OrdersController < ApplicationController
         item = Item.find(params[:format])
         @order.items << item
         redirect_to root_path
-    end  
+    end 
+
+    def destroy
+        item = Item.find(params[:id])
+        @order.items.delete(item)
+    end
 end
     
