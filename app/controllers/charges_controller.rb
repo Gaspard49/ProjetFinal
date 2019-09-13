@@ -1,6 +1,7 @@
 class ChargesController < ApplicationController
   include CurrentCart
   before_action :set_cart, only: [:create, :new]
+  after_create :empty_card
 
   def new
   end
