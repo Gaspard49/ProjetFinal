@@ -4,6 +4,7 @@ class ChargesController < ApplicationController
   after_create :empty_card
 
   def new
+    @user = current_user
   end
   
   def create
