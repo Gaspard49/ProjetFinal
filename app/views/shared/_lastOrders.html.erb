@@ -1,0 +1,16 @@
+<tr>
+    <td>
+        <%= order.created_at %>
+    </td>
+    <td>
+        <%= order.items.count %>
+    </td>
+    <td>
+        <%= order.total %>
+    </td>
+    <td>
+        <div>
+            <%= link_to "Details", order_path(order.id), method: :get, class: "btn btn-primary" %>
+        </div>
+    </td>
+</tr>
