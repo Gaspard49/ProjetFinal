@@ -33,7 +33,8 @@ class ChargesController < ApplicationController
   private
 
   def after_payment
-    @order.status == false
+    @order.status = false
+    @order.save
   end
 
 end
