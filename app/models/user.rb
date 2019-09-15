@@ -6,7 +6,11 @@ class User < ApplicationRecord
   has_many :orders
   has_one_attached :avatar
 
-  after_create :welcome_send
+  after_create :welcome_send, :new_order
+  
+  def new_order 
+    Order.create(user_id:self.id, status: true) 
+  end
 
   def welcome_send
     UserMailer.welcome_email(self).deliver_now
