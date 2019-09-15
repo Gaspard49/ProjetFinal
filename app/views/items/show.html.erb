@@ -22,10 +22,9 @@
                         <li><a href="#"><span>Availibility</span> : In Stock</a></li>
                     </ul>
                     <p><%= @item.description %></p>
-                    <div class="product_count">
-                                
-                    </div>
-                    <%= button_to "Add to cart", orders_path(@item), method: :post, class: "button button-head" %> 
+                    
+                    <%= button_to "Add to card", orders_path(@item), method: :post, class: "button primary-btn" %>
+                   
                 </div>
             </div>
         </div>

@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
         item = Item.find(params[:format])
         @order.items << item
         redirect_to root_path
-    end  
+    end 
 
     def destroy
         item = Item.find(params[:id])
