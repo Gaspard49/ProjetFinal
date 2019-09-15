@@ -14,7 +14,5 @@ Rails.application.routes.draw do
     resources :charges
   end
 
-  get 'last_order', to: 'orders#last', as: :last_order
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
