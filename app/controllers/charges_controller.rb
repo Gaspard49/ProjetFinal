@@ -3,6 +3,7 @@ class ChargesController < ApplicationController
   before_action :set_cart, only: [:create, :new]
 
   def new
+    @user = current_user
   end
   
   def create
