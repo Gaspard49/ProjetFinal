@@ -3,7 +3,8 @@ class Order < ApplicationRecord
     has_many :items, through: :item_orders
 
     def total
-        items.sum(&:price)
+        items.sum(&:price).round(2)
     end
 
+    
 end

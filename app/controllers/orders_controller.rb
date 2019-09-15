@@ -5,6 +5,9 @@ class OrdersController < ApplicationController
     def index
     end
 
+    def last
+    end
+
     def create 
         item = Item.find(params[:format])
         @order.items << item

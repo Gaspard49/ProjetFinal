@@ -24,7 +24,8 @@ User.create(first_name: 'Admin', last_name: 'Admin', email: 'admin@admin.com',pa
 5.times do
   Item.create(title: Faker::Movie.quote, description: Faker::Lorem.sentence(word_count: 3), price: Faker::Number.decimal(l_digits: 2), category: Faker::Team.name)
 end
-
+=begin
 5.times do
   Order.create(user_id: User.all.sample.id, status: false)
 end
+=end

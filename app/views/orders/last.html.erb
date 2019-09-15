@@ -1,0 +1,27 @@
+  <!--================Cart Area =================-->
+  <section class="cart_area">
+    <div class="container">
+        <div class="cart_inner">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Orders</th>
+                            <th scope="col">Articles</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% current_user.orders.each do |order| %>
+                        <% if order.status == false %>
+                          <%= render 'shared/lastOrders', order: order %>
+                          <%end %>
+                        <% end %>
+                    </tbody>
+                </table>
+                <%= link_to 'Home', root_path %>
+            </div>
+        </div>
+    </div>                  
+</section>
+<!--================ end Cart Area =================-->
