@@ -1,8 +1,15 @@
 class OrdersController < ApplicationController
     include CurrentCart
-    before_action :set_cart, only: [:create, :index, :destroy]
+    before_action :set_cart, only: [:create, :index, :destroy, :new]
 
     def index
+    end
+
+    def new
+    end
+
+    def show
+        @order = Order.find(params[:id])
     end
 
     def create 
