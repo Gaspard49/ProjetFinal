@@ -1,6 +1,7 @@
 class ChargesController < ApplicationController
   include CurrentCart
   before_action :set_cart, only: [:create, :new]
+  after_action :after_payment, only: [:create]
 
   def new
     @user = current_user
@@ -28,5 +29,13 @@ class ChargesController < ApplicationController
     flash[:error] = e.message
     redirect_to new_charge_path
   end
-  
+
+  private
+
+  def after_payment
+    @order.status = false
+    @order.save
+  end
+
 end
+

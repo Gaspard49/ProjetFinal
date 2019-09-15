@@ -16,7 +16,7 @@ ItemOrder.delete_all
 puts "Delete done!"
 
 2.times do
-  User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 65), city: Faker::Address.city, zip_code:  Faker::Address.zip_code, address: Faker::Address.street_address ,password: 'password')
+  User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 65), city: Faker::Address.city, zip_code:  Faker::Address.zip_code, address: Faker::Address.street_address ,password: 'password', admin: false)
 end
 
 User.create(first_name: 'Admin', last_name: 'Admin', email: 'admin@admin.com',password: 'admin123', admin: true)
@@ -24,12 +24,8 @@ User.create(first_name: 'Admin', last_name: 'Admin', email: 'admin@admin.com',pa
 5.times do
   Item.create(title: Faker::Movie.quote, description: Faker::Lorem.sentence(word_count: 3), price: Faker::Number.decimal(l_digits: 2), category: Faker::Team.name)
 end
-
+=begin
 5.times do
-  Order.create(user_id: User.all.sample.id)
+  Order.create(user_id: User.all.sample.id, status: false)
 end
-
-
-10.times do
-  Order.create(user_id: User.all.sample.id)
-end
+=end
