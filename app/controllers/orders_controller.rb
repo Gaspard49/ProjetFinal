@@ -6,6 +6,7 @@ class OrdersController < ApplicationController
     end
 
     def new
+        
     end
 
     def show
@@ -21,7 +22,7 @@ class OrdersController < ApplicationController
     def destroy
         item = Item.find(params[:id])
         @order.items.delete(item)
-        render "index"
+        render "new"
     end
 end
     

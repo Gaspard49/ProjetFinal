@@ -1,3 +1,41 @@
-<% @order.items.each do |item| %>
-    <%= item.title %>
-<% end %>
+<!-- ================ start banner area ================= -->	
+	<section class="blog-banner-area" id="category">
+		<div class="container h-100">
+			<div class="blog-banner">
+				<div class="text-center">
+					<h1>Last order</h1>
+					<nav aria-label="breadcrumb" class="banner-breadcrumb"></nav>
+				</div>
+			</div>
+    </div>
+	</section>
+    <!-- ================ end banner area ================= -->
+    
+  <!--================Cart Area =================-->
+  <section class="cart_area">
+        <div class="container">
+            <div class="cart_inner">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Product</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% @order.items.each do |item| %>
+                              <%= render 'shared/showItemsCard', item: item %>
+                            <% end %>
+                        </tbody>
+                    </table>
+                    <div>
+                        <h1><%= @order.total %> €</h1>
+                    </div>
+                </div>
+            </div>
+        </div>                  
+</section>
+  <!--================ end Cart Area =================-->
