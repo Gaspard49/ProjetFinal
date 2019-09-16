@@ -3,5 +3,5 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #parallax-1{
-    background-image: url(/assets/home/parallax-bg.png);
+    background: url(asset_path(“/home/parallax-bg.png”));
 }
