@@ -21,7 +21,7 @@ class OrdersController < ApplicationController
     def destroy
         item = Item.find(params[:id])
         @order.items.delete(item)
-        render "index"
+        render "new"
     end
 end
     
