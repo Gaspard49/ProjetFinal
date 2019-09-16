@@ -1,4 +1,4 @@
-pour info connexion admin avec identifiants envoyés  
+Pour info connexion admin avec identifiants envoyés  
 
 v1.0 - done
 Page d’accueil
