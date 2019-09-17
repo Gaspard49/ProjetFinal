@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
   # GET /items/1.json
   def show
     puts "#" * 100
-    puts @item
+    puts @item.picture
     puts "#" * 100
   end
 
