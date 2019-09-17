@@ -7,7 +7,7 @@
               <%=image_tag("product/product1.png", class: "card-img", alt: 'product1') %>
           <% end %>
         <ul class="card-product__imgOverlay">
-          <li> <%= button_to item_path(item), method: :get do %><i class="ti-search"></i><% end %></li>          
+          <li> <%= button_to item_path(item), method: :get do %><i class="fas fa-search"></i><% end %></li>          
           <li> <%= button_to orders_path(item), method: :post do %><i class="ti-shopping-cart"></i><% end %></li>
         </ul>
       </div>
