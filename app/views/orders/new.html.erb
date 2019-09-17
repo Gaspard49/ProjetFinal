@@ -38,7 +38,11 @@
                     <div>
                         <h1><%= @order.total %> €</h1>
                     </div>
-                    <%= link_to 'Order', new_order_charge_path(@order) %>
+                    <%= link_to 'Order', new_order_charge_path(@order), class: "button button-header"%>
+                    <ul class="nav-shop">
+              <li class="nav-item"><%= link_to '<i class="fas fa-shopping-cart"></i>'.html_safe, new_order_path, controller: "orders" %></li>
+              <li class="nav-item"><%= link_to "Buy now", new_order_path,  %></li>
+            </ul>
                 </div>
             </div>
         </div>                  
