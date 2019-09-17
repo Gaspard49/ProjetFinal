@@ -15,8 +15,6 @@ gem 'rails', '~> 5.2.3'
 gem 'devise'
 gem 'letter_opener'
 
-
-
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
