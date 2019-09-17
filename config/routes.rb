@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :pictures, only: [:create]
   end
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }
 
   resources :users, only: [:show]
   
@@ -14,7 +14,6 @@ Rails.application.routes.draw do
     resources :charges
   end
 
-  get '/sub', to: 'subscribers#index'
   resources :subscribers
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
