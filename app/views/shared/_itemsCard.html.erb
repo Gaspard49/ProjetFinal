@@ -1,20 +1,24 @@
 <tr>
     <td>
-        <div class="media">
-            <div>
-                <%= button_to "Delete item", order_path(item), method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure ?' } %>
-            </div>
-            <div class="d-flex">
-                <%=image_tag("cart/cart2.png",  alt: 'product1') %>
-                <div class="media-body">
-                    <div>
-                        <p><%= item.title%></p>
-                    </div>
-                </div>
-            </div>
+        <div class="image">
+        <%if item.picture.attached?%>
+            <%= image_tag item.picture, alt: 'picture' %>
+        <% else %>
+            <%=image_tag("product/product1.png", class: "card-img", alt: 'product1') %>
+        <% end %>
         </div>
     </td>
     <td>
+        <p><%= item.title%></p>
+    </td>
+    <td>
         <h5><%= item.price %></h5>
+    </td>
+    <td>
+        <%= link_to order_path(item), method: :delete do %>
+        <span style="font-size: 1em; color: red;">
+            <i class="fas fa-times"></i>
+        </span>
+        <% end %>
     </td>
 </tr>
