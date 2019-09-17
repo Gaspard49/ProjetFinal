@@ -51,7 +51,7 @@
               <% if user_signed_in? %>
  
             <ul class="nav-shop">
-              <li class="nav-item"><%= link_to '<i class="ti-shopping-cart"></i>'.html_safe, new_order_path, controller: "orders" %></li>
+              <li class="nav-item"><%= link_to '<i class="fas fa-shopping-cart"></i>'.html_safe, new_order_path, controller: "orders" %></li>
               <li class="nav-item"><%= link_to "Buy now", new_order_path, class: "button button-header" %></li>
             </ul>
             <% end %>
