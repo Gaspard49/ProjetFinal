@@ -1,12 +1,10 @@
 <tr>
     <td>
-        <div class="image">
         <%if item.picture.attached?%>
             <%= image_tag item.picture, alt: 'picture' %>
         <% else %>
             <%=image_tag("product/product1.png", class: "card-img", alt: 'product1') %>
         <% end %>
-        </div>
     </td>
     <td>
         <p><%= item.title%></p>
