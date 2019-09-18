@@ -1,12 +1,6 @@
 class SubscribersController < ApplicationController
-  def index
-    @subscriber = Subscriber.new
-  end
 
   def create
-    puts "@" * 100
-    puts subscriber_params
-    puts "@" * 100
     @subscriber = Subscriber.new(subscriber_params)
       if @subscriber.save
         cookies[:saved_lead] = true

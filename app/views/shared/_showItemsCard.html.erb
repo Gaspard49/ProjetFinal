@@ -1,15 +1,13 @@
 <tr>
     <td>
-        <div class="media">
-            <div class="d-flex">
-                <%=image_tag("cart/cart2.png",  alt: 'product1') %>
-                <div class="media-body">
-                    <div>
-                        <p><%= item.title%></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <%if item.picture.attached?%>
+            <%= image_tag item.picture, alt: 'picture' %>
+        <% else %>
+            <%=image_tag("product/product1.png", class: "card-img", alt: 'product1') %>
+        <% end %>
+    </td>
+    <td>
+        <p><%= item.title%></p>
     </td>
     <td>
         <h5><%= item.price %></h5>
