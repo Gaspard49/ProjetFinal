@@ -3,7 +3,7 @@
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
         
-         <%= link_to root_path do %>
+         <%= link_to root_path, data: { turbolinks: false } do %>
           <%=image_tag("b-logo.png", class: "navbar-brand logo_h", alt: 'logo', :style => "width: 5rem;" ) %>
            <% end %>
            
@@ -15,7 +15,7 @@
           </button>
           <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
-              <li class="nav-item active"><a class="nav-link" href="<%= root_path %>">Home</a></li>
+              <li class="nav-item active"><a class="nav-link" href="<%= root_path %>" data-turbolinks="false">Home</a></li>
               <li class="nav-item submenu dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Categories</a>

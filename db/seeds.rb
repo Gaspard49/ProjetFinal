@@ -38,7 +38,7 @@ end
 
     Category.create(name: 'Shoes')
     @category = Category.last
-    @category.picture.attach(io: File.open('app/assets/images/home/hero-slide1.png'), filename: 'hero-slide1.png',  content_type: 'image/jpg')
+    @category.picture.attach(io: File.open('app/assets/images/home/shoes_herobanner.jpeg'), filename: 'shoes_herobanner.jpeg',  content_type: 'image/jpg')
 
     Item.create(title: 'Nike', description: 'Unique size: 40 (EU size)', price: 49.99)
     @item = Item.last
