@@ -12,7 +12,11 @@
         </ul>
       </div>
       <div class="card-body">
-        <p><%= item.categories.name %></p>
+        <p>
+        <% item.categories.each do |category| %>
+           <%= category.name %> 
+        <% end %>
+        </p>
         <h4 class="card-product__title"><p><%= item.title %></p></h4>
         <p class="card-product__price"><%= item.price %>€</p>
       </div>

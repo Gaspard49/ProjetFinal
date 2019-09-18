@@ -26,8 +26,9 @@
                     <h3><%= @item.title %></h3>
                     <h2><%= @item.price%>€</h2>
                     <ul class="list">
-                        <li><a class="active" href="#"><span>Category</span> : <% @item.categories.each do |category| %>
-                        <%= @item.category %>
+                        <li><a class="active" href="#"><span>Category</span> : 
+                        <% @item.categories.each do |category| %>
+                        <%= category.name %> 
                         <% end %>
                         </a></li>
                         <li><a href="#"><span>Availibility</span> : In Stock</a></li>
