@@ -1,47 +1,47 @@
 
 	<!-- ================ start banner area ================= -->	
-	<section class="blog-banner-area" id="category">
-		<div class="container h-100">
-			<div class="blog-banner">
-				<div class="text-center">
-					<h1>Shopping Cart</h1>
-					<nav aria-label="breadcrumb" class="banner-breadcrumb">
+<section class="blog-banner-area" id="category">
+  <div class="container h-100">
+	<div class="blog-banner">
+	  <div class="text-center">
+		<h1>Shopping Cart</h1>
+			<nav aria-label="breadcrumb" class="banner-breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item active" aria-current="page">Shopping Cart</li>
             </ol>
-          </nav>
-				</div>
-			</div>
-    </div>
-	</section>
+            </nav>
+	  </div>
+	</div>
+  </div>
+ </section>
     <!-- ================ end banner area ================= -->
     
   <!--================Cart Area =================-->
   <section class="cart_area">
         <div class="container">
             <div class="cart_inner">
-                <div class="table-responsive">
+                <div class="table">
                     <table class="table table-hover">
                         <thead>
                             <tr>
                                 <th scope="col">Product</th>
-                                <th scope="col">Price</th>
                                 <th scope="col">Title</th>
+                                <th scope="col">Price</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="tbody">
                             <% @order.items.each do |item| %>
                               <%= render 'shared/itemsCard', item: item %>
                             <% end %>
                         </tbody>
                     </table>
-                    <div>
+                    <div class="d-flex flex-column align-items-end">
                         <h1><%= @order.total %> €</h1>
+                    <%= link_to 'Order', new_order_charge_path(@order), class:"button button-subscribe"%>
                     </div>
-                    <%= link_to 'Order', new_order_charge_path(@order), class: "button button-header"%>
                 </div>
             </div>
-        </div>                  
+        </div>
 </section>
   <!--================ end Cart Area =================-->
