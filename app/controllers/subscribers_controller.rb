@@ -9,9 +9,6 @@ class SubscribersController < ApplicationController
         redirect_to root_path
       else
         redirect_to root_path
-        else
-          flash[:error] = "An error occured !"
-          redirect_to root_path
       end
   end
   
