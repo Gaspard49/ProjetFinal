@@ -1,0 +1,19 @@
+
+
+
+ <section class="section-margin calc-60px">
+      <div class="container">
+        <div class="section-intro pb-60px">
+          <p>Just made for you</p>
+          <h2>Our <%= @category.name.capitalize %></h2>
+        </div>
+        <div class="row">
+            <% @category.items.each do |item| %>
+             <%= render 'shared/card2', item: item %>
+          <% end %>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    

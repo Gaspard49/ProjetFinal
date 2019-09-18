@@ -25,10 +25,19 @@
                     <h3><%= @item.title %></h3>
                     <h2><%= @item.price%>€</h2>
                     <ul class="list">
-                        <li><a class="active" href="#"><span>Category</span> : <%= @item.category %></a></li>
+                        <li><a class="active" href="#"><span>Category</span> : 
+                        <% @item.categories.each do |category| %>
+                        <%= category.name %> 
+                        <% end %>
+                        </a></li>
+                        <li><a href="#"><span>Availibility</span> : In Stock</a></li>
                     </ul>
-                    <p><%= @item.description %></p>                   
-                    <%= button_to "Add to card", orders_path(@item), method: :post, class: "button primary-btn" %>  
+                    <p><%= @item.description %></p>
+                    <% if current_user %>
+                    <%= button_to "Add to card", orders_path(@item), method: :post, class: "button primary-btn" %>
+                   <% else %>
+                   <%= button_to "Add to card", new_user_session_path, class: "button primary-btn" %>
+                     <% end %>
                 </div>
             </div>
         </div>
