@@ -3,8 +3,10 @@
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
         
-          <%=image_tag("b-logo.png", class: "navbar-brand logo_h", alt: 'logo', :style => "width: 7rem;" ) %>
-
+         <%= link_to root_path do %>
+          <%=image_tag("b-logo.png", class: "navbar-brand logo_h", alt: 'logo', :style => "width: 5rem;" ) %>
+           <% end %>
+           
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="icon-bar"></span>
@@ -18,10 +20,9 @@
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Categories</a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="category.html">Shop Category</a></li>
-                  <li class="nav-item"><a class="nav-link" href="single-product.html">Product Details</a></li>
-                  <li class="nav-item"><a class="nav-link" href="checkout.html">Product Checkout</a></li>
-                  <li class="nav-item"><a class="nav-link" href="confirmation.html">Confirmation</a></li>
+                <% @categories.each do |category| %>
+        <li class="nav-item"><a class="nav-link" href="<%= category_path(category) %>"><%= category.name %></a></li>
+       <% end %>
                 </ul>
 							</li>
               

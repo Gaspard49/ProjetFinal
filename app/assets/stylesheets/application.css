@@ -27,3 +27,9 @@
  *= require style.css
  *= require main.css
  */
+
+ .card-product__img{
+    height:250px;
+    width:auto;
+    overflow: hidden;
+ }

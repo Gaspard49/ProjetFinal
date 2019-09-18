@@ -1,4 +1,4 @@
-
+<div class="col-md-6 col-lg-4 col-xl-3">
     <div class="card text-center card-product">
       <div class="card-product__img">
           <%if item.picture.attached?%>
@@ -7,7 +7,7 @@
               <%=image_tag("product/product1.png", class: "card-img", alt: 'product1') %>
           <% end %>
         <ul class="card-product__imgOverlay">
-          <li> <%= button_to item_path(item), method: :get do %><i class="fas fa-search"></i><% end %></li>          
+          <li> <%= button_to item_path(item), method: :get do %><i class="fas fa-search"></i><% end %></li>
           <%if current_user%>          
           <li> <%= button_to orders_path(item), method: :post do %><i class="fas fa-cart-plus"></i><% end %></li>
           <% else %>
@@ -25,5 +25,4 @@
         <p class="card-product__price"><%= item.price %>€</p>
       </div>
     </div>
-
-
+</div>

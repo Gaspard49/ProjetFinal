@@ -31,17 +31,9 @@
         </div>
          </div>
     <section class="section-margin mt-0">
-      <div class="owl-carousel owl-theme hero-carousel">
+      <div class="owl-carousel owl-theme hero-carousel", style="margin-bottom: 10px">
       <% @categories.each do |category| %>
-      <%= link_to category_path(category) do %>
-        <div class="hero-carousel__slide">
-        <%=image_tag("home/hero-slide1.png", class: "img-fluid", alt: 'hero_slide1') %>
-          <div class="hero-carousel__slideOverlay">
-            <h3><%= category.name %> </h3>
-            <p>Accessories Item</p>
-          </div>
-        </div>
-         <% end %>
+      <%= render 'shared/category_card', category: category %>
        <% end %>
       </div>
     </section>

@@ -42,16 +42,6 @@ ActiveRecord::Schema.define(version: 2019_09_18_120112) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "comments", force: :cascade do |t|
-    t.text "content"
-    t.bigint "user_id"
-    t.bigint "item_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_comments_on_item_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
-  end
-
   create_table "item_orders", force: :cascade do |t|
     t.bigint "item_id"
     t.bigint "order_id"
