@@ -34,9 +34,11 @@
                         <li><a href="#"><span>Availibility</span> : In Stock</a></li>
                     </ul>
                     <p><%= @item.description %></p>
-                    
+                    <% if current_user %>
                     <%= button_to "Add to card", orders_path(@item), method: :post, class: "button primary-btn" %>
-                   
+                   <% else %>
+                   <%= button_to "Add to card", new_user_session_path, class: "button primary-btn" %>
+                     <% end %>
                 </div>
             </div>
         </div>
