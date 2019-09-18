@@ -39,7 +39,9 @@
                     <div>
                         <h1><%= @order.total %> €</h1>
                     </div>
-                    <%= link_to 'Order', new_order_charge_path(@order), class: "button button-header"%>
+                    <div>
+                        <%= link_to 'Order', new_order_charge_path(@order), class: "button button-header"%>
+                    </div>
                 </div>
             </div>
         </div>                  
