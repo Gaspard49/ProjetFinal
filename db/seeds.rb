@@ -66,7 +66,7 @@ end
 
     #Categories Shirt
 
-    Category.create(name: 'Shirt')
+    Category.create(name: 'Shirts')
     @category = Category.last
     @category.picture.attach(io: File.open('app/assets/images/home/hero-slide2.png'), filename: 'hero-slide2.png',  content_type: 'image/jpg')
 
@@ -98,7 +98,7 @@ end
 
     #Categories Pant
 
-    Category.create(name: 'Pant')
+    Category.create(name: 'Pants')
     @category = Category.last
     @category.picture.attach(io: File.open('app/assets/images/home/hero-slide3.png'), filename: 'hero-slide3.png',  content_type: 'image/jpg')
 
