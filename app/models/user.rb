@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :orders
   has_one_attached :avatar
 
-  after_create :welcome_send, :new_order
+  after_create :welcome_send, :new_order, :newsletter
   
   def new_order 
     Order.create(user_id:self.id, status: true) 
