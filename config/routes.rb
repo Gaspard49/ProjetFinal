@@ -15,7 +15,11 @@ Rails.application.routes.draw do
   end
 
   resources :subscribers
+<<<<<<< HEAD
   root to: 'subscribers#index'
 
+=======
+  get '/sub',to: 'subscribers#index'
+>>>>>>> development
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
