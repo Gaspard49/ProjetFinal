@@ -1,62 +1,62 @@
 
 
  <!-- ================ start banner area ================= -->	
-	<section class="blog-banner-area" id="category">
-		<div class="container h-100">
-			<div class="blog-banner">
-				<div class="text-center">
-					<h1>Update Profile</h1>
-					<nav aria-label="breadcrumb" class="banner-breadcrumb">
-          </nav>
-				</div>
+<section class="blog-banner-area" id="category">
+	<div class="container h-100">
+		<div class="blog-banner">
+			<div class="text-center">
+				<h1>Update Profile</h1>
+				<nav aria-label="breadcrumb" class="banner-breadcrumb">
+        		</nav>
 			</div>
+		</div>
     </div>
-	</section>
+</section>
 	<!-- ================ end banner area ================= -->
   
   <!--================Login Box Area =================-->
-	<section class="login_box_area section-margin">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6">
-					<div class="login_box_img">
-						<div class="hover">
-							<h4>Not now?</h4>
-							<p>Press the button below </p>
+<section class="login_box_area section-margin">
+  <div class="container">
+ 	  <div class="row">
+		<div class="col-lg-6">
+		  <div class="login_box_img">
+			<div class="hover">
+				<h4>Not now?</h4>
+				<p>Press the button below </p>
                   
-							<%= link_to('Home', root_path, class: "button button-account") %>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-6">
+				<%= link_to('Home', root_path, class: "button button-account") %>
+			</div>
+		  </div>
+		</div>
+		  <div class="col-lg-6">
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, class: 'row login_form', id:"register_form") do |f| %>
-           <%= render "devise/shared/error_messages", resource: resource %>	
+            <%= render "devise/shared/error_messages", resource: resource %>	
 
 
-               <br>
+        <br>
  	          <div class="col-md-12 form-group">
-             <%= f.label :Avatar %>
+              <%= f.label :Avatar %>
               <%= f.file_field :avatar, class: " form-control-file", placeholder:"Upload Avatar" %>		
               </div>
 
            	<div class="col-md-12 form-group">
           <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "form-control", placeholder:"First Name", onfocus:"this.placeholder = ''", onblur:"this.placeholder = 'First Name'" %>		
-              </div>
+            </div>
+
+            <div class="col-md-12 form-group">
+          <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class: "form-control", placeholder:"Last Name", onfocus:"this.placeholder = ''", onblur:"this.placeholder = 'Last Name'" %>		
+            </div>
+
+            <div class="col-md-12 form-group">
+              <%= f.label :Date_of_Birth %>
+          <%= f.date_field :date_of_birth, autofocus: true, autocomplete: "date_of_birth", class: "form-control", placeholder:"Date of Birth" %>		
+            </div>
+
+            <div class="col-md-12 form-group">
+          <%= f.text_field :address, autofocus: true, autocomplete: "address", class: "form-control", placeholder:"Address", onfocus:"this.placeholder = ''", onblur:"this.placeholder = 'Address'" %>		
+            </div>
 
               <div class="col-md-12 form-group">
-          <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class: "form-control", placeholder:"Last Name", onfocus:"this.placeholder = ''", onblur:"this.placeholder = 'Last Name'" %>		
-              </div>
-
-              	<div class="col-md-12 form-group">
-                <%= f.label :Date_of_Birth %>
-          <%= f.date_field :date_of_birth, autofocus: true, autocomplete: "date_of_birth", class: "form-control", placeholder:"Date of Birth" %>		
-              </div>
-
-              	<div class="col-md-12 form-group">
-          <%= f.text_field :address, autofocus: true, autocomplete: "address", class: "form-control", placeholder:"Address", onfocus:"this.placeholder = ''", onblur:"this.placeholder = 'Address'" %>		
-              </div>
-
-               	<div class="col-md-12 form-group">
           <%= f.text_field :zip_code, autofocus: true, autocomplete: "zip_code", class: "form-control", placeholder:"Zip Code", onfocus:"this.placeholder = ''", onblur:"this.placeholder = 'Zip Code'" %>		
               </div>
 
@@ -64,19 +64,19 @@
           <%= f.text_field :city, autofocus: true, autocomplete: "city", class: "form-control", placeholder:"City", onfocus:"this.placeholder = ''", onblur:"this.placeholder = 'City'" %>		
               </div>
             <br>
-                <div class="col-md-12 form-group">
+              <div class="col-md-12 form-group">
           <%= f.password_field :current_password, autocomplete: "current_password", class: "form-control", placeholder:"Current Password", onfocus:"this.placeholder = ''", onblur:"this.placeholder = 'Current Password'" %>
-							</div>
+			  </div>
               
-							<div class="col-md-12 form-group action">
-               <%= f.submit "Update" , class:"button button-register w-100" %>
-							</div>
-					<% end %>
+			  <div class="col-md-12 form-group action">
+                <%= f.submit "Update" , class:"button button-register w-100" %>
 					</div>
-				</div>
+				<% end %>
+					</div>
+			  </div>
         <br>
       <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"button button-delete" %>
-			</div>
+  </div>
 
-	</section>
+</section>
 	<!--================End Login Box Area =================--> 

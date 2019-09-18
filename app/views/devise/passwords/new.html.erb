@@ -9,21 +9,21 @@
 						</div>
 					</div>
 				</div>
-<div class="col-lg-6">
+		<div class="col-lg-6">
 		<div class="login_form_inner register_form_inner">
-        <h2>Forgot your password?</h2>
-            <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }, class: 'row login_form', id:"login_form") do |f| %>
-                <%= render "devise/shared/error_messages", resource: resource %>				
-		              <div class="col-md-12 form-group">
-                      <%= f.label :email, "Email" %><br />
-                      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder:"Email Address", onfocus:"this.placeholder = ''", onblur:"this.placeholder = 'Email Address'" %>		
-                  </div>
-                  <div class="col-md-12 form-group action">
-                    <%= f.submit "Send me reset password instructions"  , class:"button button-login w-100" %>
-		              </div>
+        	<h2>Forgot your password?</h2>
+            	<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }, class: 'row login_form', id:"login_form") do |f| %>
+                	<%= render "devise/shared/error_messages", resource: resource %>				
+		          		<div class="col-md-12 form-group">
+                    		<%= f.label :email, "Email" %><br />
+                    		<%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder:"Email Address", onfocus:"this.placeholder = ''", onblur:"this.placeholder = 'Email Address'" %>		
+                  		</div>
+                  		<div class="col-md-12 form-group action">
+                    		<%= f.submit "Send me reset password instructions"  , class:"button button-login w-100" %>
+		              	</div>
                 </div>
              </div>
-        <% end %>
+        		<% end %>
           </div>
 				</div>
 			</div>

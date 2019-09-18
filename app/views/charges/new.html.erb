@@ -22,16 +22,15 @@
   <section class="checkout_area section-margin--small">
     <div class="container">
       
-        <div class="billing_details">
-            <div class="row">
-                <div class="col-lg-8">
-                    <h3>Billing Details</h3>
-                    <div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
-          <div class="confirmation-card">
-            <h3 class="billing-title">Billing Address</h3>
+      <div class="billing_details">
+          <div class="row">
+              <div class="col-lg-8">
+                  <h3>Billing Details</h3>
+                  <div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
+        <div class="confirmation-card">
+          <h3 class="billing-title">Billing Address</h3>
             <table class="order-rable">
               <tr>
-                 <tr>
                 <td>Street</td>
                 <td>: <%= @user.address%></td>
               </tr>
@@ -48,38 +47,38 @@
                 <td><%= @user.zip_code%></td>
               </tr>
             </table>
-          </div>
         </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="order_box">
-                        <h2>Your Order</h2>
-                        <ul class="list">
-                        <li><a href="#"><h4>Product <span>Total</span></h4></a></li>
+        </div>
+              </div>
+              <div class="col-lg-4">
+                  <div class="order_box">
+                      <h2>Your Order</h2>
+                      <ul class="list">
+                      <li><a href="#"><h4>Product <span>Total</span></h4></a></li>
                               
-                            <% @order.items.each do |item| %>
-                              <li><a href="#"><%= render 'shared/itemsCheckout', item: item %></a></li>
-                            <% end %>
+                          <% @order.items.each do |item| %>
+                            <li><a href="#"><%= render 'shared/itemsCheckout', item: item %></a></li>
+                          <% end %>
                           
-                        </ul>
-                        <ul class="list list_2">
-                            <h4>(shipping free) </h4>
-                            <li><a href="#">Total <span><%= @order.total%> €</span></a></li>
-                        </ul>
+                      </ul>
+                      <ul class="list list_2">
+                          <h4>(shipping free) </h4>
+                          <li><a href="#">Total <span><%= @order.total%> €</span></a></li>
+                      </ul>
                 
                     
-                        <div class="text-center">
-                        <%= form_tag order_charges_path do %>
+                  <div class="text-center">
+                      <%= form_tag order_charges_path do %>
                         <article>
                           <% if flash[:error].present? %>
-                          <div id="error_explanation">
+                            <div id="error_explanation">
                             <p><%= flash[:error] %></p>
-                          </div>
+                            </div>
                           <% end %>
                           <label class="amount">
                             <span><%= @order.total%>€</span>
                           </label>
-                      </article>
+                        </article>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
@@ -88,11 +87,11 @@
           data-amount= <%= @order.total * 100 %>
           data-locale="auto"></script>
 <% end %>
-                        </div>
                     </div>
+                  </div>
                 </div>
             </div>
-        </div>
+          </div>
     </div>
   </section>
   <!--================End Checkout Area =================-->
