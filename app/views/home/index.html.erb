@@ -286,14 +286,13 @@
       <div class="container">
         <div class="subscribe text-center">
           <h3 class="subscribe__title">Get Update From Anywhere</h3>          
-          <div id="mc_embed_signup">
-              <%= form_for @subscriber, :url => subscribers_path, class: 'subscribe-form form-inline mt-5 pt-1' do |f| %>
+              <%= form_tag subscribers_path(@subscriber), method: "post", class: 'subscribe-form form-inline mt-5 pt-1' do %>
                <div class="form-group ml-sm-auto">
-                <%= f.email_field :email, placeholder: "Enter your email", class: "" %>
+                  <%= text_field_tag :email, nil, placeholder: "Enter your email" %>
                 </div>
-                <%= f.submit "Subscribe now", class:"button button-subscribe mr-auto mb-1"%>
-                <% end %>
-          </div>
+                <%= submit_tag "Subscribe now", class:"button button-subscribe mr-auto mb-1" %>
+
+              <% end %>
         </div>
       </div>
     </section>
