@@ -16,6 +16,7 @@
           <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
               <li class="nav-item active"><a class="nav-link" href="<%= root_path %>" data-turbolinks="false">Home</a></li>
+              <li class="nav-item active"><a class="nav-link" href="<%= contact_index_path %>" data-turbolinks="false">Contact</a></li>
               <li class="nav-item submenu dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Categories</a>
@@ -54,7 +55,11 @@
  
             <ul class="nav-shop">
               <li class="nav-item"><%= link_to '<i class="fas fa-shopping-cart"></i>'.html_safe, new_order_path, controller: "orders" %></li>
-              <li class="nav-item"><%= link_to "Buy now", new_order_path, class: "button button-header" %></li>
+               <% if current_user.admin == true %>
+               <li class="nav-item"><%= link_to('Admin', rails_admin_path, class: "button button-header") %></li>
+               <% else %>
+               <li class="nav-item"><%= link_to "Buy now", new_order_path, class: "button button-header" %></li>
+               <% end %>
             </ul>
             <% end %>
           </div>

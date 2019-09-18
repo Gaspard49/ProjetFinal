@@ -139,7 +139,7 @@
           <h3 class="subscribe__title">Get Update From Anywhere</h3>          
               <%= form_tag subscribers_path(@subscriber), method: "post", class: 'subscribe-form form-inline mt-5 pt-1' do %>
                <div class="form-group ml-sm-auto">
-                  <%= text_field_tag :email, nil, placeholder: "Enter your email" %>
+                  <%= text_field_tag :email, nil, placeholder: "Enter your email", class: 'form-control mb-1' %>
                 </div>
                 <%= submit_tag "Subscribe now", class:"button button-subscribe mr-auto mb-1" %>
 
@@ -147,11 +147,8 @@
         </div>
       </div>
     </section>
+
          
     <!-- ================ Subscribe section end ================= --> 
 
-  </main>
 
-	<!--================ End footer Area  =================-->
-</body>
-</html>
