@@ -35,6 +35,7 @@ class ChargesController < ApplicationController
 
   def order_send
     UserMailer.order_email(@user).deliver_now
+    Us
   end
 
   def after_payment
