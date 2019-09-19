@@ -75,7 +75,7 @@
 						<div class="col-lg-6">
 							<div class="review_box">
                <% if current_user %>
-								<h4>Post a comment</h4>
+								<h4>Ask a question, our vendor will reply as soon as possible.</h4>
                 <%= form_for [@item, Comment.new], :html => {:class => 'row contact_form'} do |f| %>
 									<div class="col-md-12">
 										<div class="form-group">
@@ -83,10 +83,10 @@
 										</div>
 									</div>
 									<div class="col-md-12 text-right">
-								    <%= f.submit "Add Comment", class:"btn primary-btn"%>
+								    <%= f.submit "Ask a Question", class:"btn primary-btn"%>
                  <% end %>
                  <% else %>
-                 <h4>To post a comment, please Log In.</h4>
+                 <h4>To ask a question, please Log In.</h4>
                  <% end %>
 								</div>
 							</div>
