@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
     end
 
     def create 
-        item = Item.find(params[:format])
+       @item = Item.find(params[:format])
         item.stock = item.stock - 1
         @order.items << item
         flash[:notice] = "Your item has been added."
@@ -21,7 +21,7 @@ class OrdersController < ApplicationController
     end 
 
     def destroy
-        item = Item.find(params[:id])
+        @item = Item.find(params[:id])
         @order.items.delete(item)
         flash[:alert] = "Your item has been removed."
         render "new"
