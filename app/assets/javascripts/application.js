@@ -15,7 +15,6 @@
 //= require turbolinks
 //= require_tree .
 
-
 //= require jquery/jquery-3.2.1.min.js
 //= require fontawesome/bootstrap.bundle.min.js
 //= require skrollr.min.js

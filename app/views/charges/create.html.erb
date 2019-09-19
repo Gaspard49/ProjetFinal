@@ -21,7 +21,7 @@
     <div class="container">
       <p class="text-center billing-alert">Thank you. Your order has been received.</p>
       <div class="row mb-5">
-        <div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
+        <div class="col-md-6 col-xl-6 mb-4 mb-xl-0">
           <div class="confirmation-card">
             <h3 class="billing-title">Order Info</h3>
             <table class="order-rable">
@@ -44,7 +44,7 @@
             </table>
           </div>
         </div>
-        <div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
+        <div class="col-md-6 col-xl-6 mb-4 mb-xl-0">
           <div class="confirmation-card">
             <h3 class="billing-title">Billing Address</h3>
             <table class="order-rable">
@@ -63,30 +63,7 @@
               </tr>
               <tr>
                 <td>Postcode</td>
-                <td><%= @user.zip_code%></td>
-              </tr>
-            </table>
-          </div>
-        </div>
-        <div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
-          <div class="confirmation-card">
-            <h3 class="billing-title">Shipping Address</h3>
-            <table class="order-rable">
-              <tr>
-                <td>Street</td>
-                <td>: <%= @user.address%></td>
-              </tr>
-              <tr>
-                <td>City</td>
-                <td>: <%= @user.city%></td>
-              </tr>
-              <tr>
-                <td>Country</td>
-                <td>: FRANCE</td>
-              </tr>
-              <tr>
-                <td>Postcode</td>
-                <td><%= @user.zip_code%></td>
+                <td>: <%= @user.zip_code%></td>
               </tr>
             </table>
           </div>
@@ -105,7 +82,7 @@
             </thead>
             <tbody>
              <% @order.items.each do |item| %>
-                      <a href="#"><%= render 'shared/itemsConfirmation', item: item %></a>
+                      <a><%= render 'shared/itemsConfirmation', item: item %></a>
                <% end %>
                 </td>
                 <tr>
