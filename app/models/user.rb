@@ -5,6 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :orders
   has_one_attached :avatar
+  validates :email, presence: true
+  validates :password, presence: true
+  validates :password_confirmation, presence: true
 
   after_create :welcome_send, :new_order
   

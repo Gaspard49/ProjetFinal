@@ -1,6 +1,10 @@
 <tr>
   <td>
-    <p><%= item.title%></p>
+    <p><%= item.title%>
+    <% item.categories.each do |category| %>
+        <%=  category.name %>
+       <% end %>
+       </p>
   </td>
   <td>
     <h5>x 01</h5>
