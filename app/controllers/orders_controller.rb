@@ -5,7 +5,8 @@ class OrdersController < ApplicationController
     def index
     end
 
-    def new  
+    def new
+        @i
     end
 
     def show
@@ -14,7 +15,13 @@ class OrdersController < ApplicationController
 
     def create 
         item = Item.find(params[:format])
-        @order.items << item
+        if @order.items.include?(item)
+            @i = ItemOrder.where("item_id = ?", item.id)
+            @i.first.quantity += 1
+            @i.first.save
+        else
+            @order.items << item
+        end
         item.stock -= 1
         item.save
         flash[:notice] = "Your item has been added."
