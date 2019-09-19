@@ -19,13 +19,16 @@ puts "Delete done!"
 #Users Create
 2.times do
   User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 65), city: Faker::Address.city, zip_code:  Faker::Address.zip_code, address: Faker::Address.street_address ,password: 'password', admin: false)
+  @user = User.last
+  @user.avatar.attach(io: File.open('app/assets/images/avatar.jpg'), filename: 'avatar.jpg',  content_type: 'image/jpg')
 end
 #Users Create
 
     #Admin Create
 
    User.create(first_name: 'Admin', last_name: 'Admin', email: 'admin@admin.com',password: 'admin123', admin: true)
-
+   @user = User.last
+   @user.avatar.attach(io: File.open('app/assets/images/avatar.jpg'), filename: 'avatar.jpg',  content_type: 'image/jpg')
 
 
 
@@ -35,7 +38,7 @@ end
 
     Category.create(name: 'Shoes')
     @category = Category.last
-    @category.picture.attach(io: File.open('app/assets/images/home/hero-slide1.png'), filename: 'hero-slide1.png',  content_type: 'image/jpg')
+    @category.picture.attach(io: File.open('app/assets/images/home/shoes_herobanner.jpeg'), filename: 'shoes_herobanner.jpeg',  content_type: 'image/jpg')
 
     Item.create(title: 'Nike', description: 'Unique size: 40 (EU size)', price: 49.99)
     @item = Item.last
@@ -66,7 +69,7 @@ end
 
     #Categories Shirt
 
-    Category.create(name: 'Shirt')
+    Category.create(name: 'Shirts')
     @category = Category.last
     @category.picture.attach(io: File.open('app/assets/images/home/hero-slide2.png'), filename: 'hero-slide2.png',  content_type: 'image/jpg')
 
@@ -98,7 +101,7 @@ end
 
     #Categories Pant
 
-    Category.create(name: 'Pant')
+    Category.create(name: 'Pants')
     @category = Category.last
     @category.picture.attach(io: File.open('app/assets/images/home/hero-slide3.png'), filename: 'hero-slide3.png',  content_type: 'image/jpg')
 
