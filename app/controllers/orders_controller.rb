@@ -15,6 +15,7 @@ class OrdersController < ApplicationController
 
     def create 
         item = Item.find(params[:format])
+        item.stock = item.stock - 1
         @order.items << item
         redirect_to root_path
     end 
