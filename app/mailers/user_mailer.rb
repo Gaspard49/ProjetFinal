@@ -27,4 +27,20 @@ class UserMailer < ApplicationMailer
     @subscriber = subscriber
     mail(to: @subscriber.email, subject: 'Newsletter !')
   end
+
+  def order_paid(order_paid)
+    puts "@" * 100
+    @order = order_paid
+    puts @order
+    puts "@" * 100
+    @user = User.find(order_paid.user_id)
+    puts @user
+    puts "@" * 100
+    email_with_name = %("admin4321@ayopmail.com")
+    puts email_with_name
+
+    puts "@" * 100
+
+    mail(to: email_with_name, subject: 'Order Paid !')
+  end
 end

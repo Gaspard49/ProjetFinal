@@ -3,6 +3,7 @@ class ChargesController < ApplicationController
   before_action :set_cart, only: [:create, :new]
   after_action :after_payment, only: [:create]
   after_action :order_send, only: [:create]
+  after_action :admin_order_paid, only: [:create]
 
   def new
     @user = current_user
@@ -35,12 +36,15 @@ class ChargesController < ApplicationController
 
   def order_send
     UserMailer.order_email(@user).deliver_now
-    Us
   end
 
   def after_payment
     @order.status = false
     @order.save
+  end
+
+  def admin_order_paid
+    UserMailer.order_paid(@order)
   end
 
 end
