@@ -5,7 +5,8 @@ class OrdersController < ApplicationController
     def index
     end
 
-    def new  
+    def new
+        @item_order = ItemOrder.where("order_id = ?", @order.id)
     end
 
     def show
@@ -13,16 +14,30 @@ class OrdersController < ApplicationController
     end
 
     def create 
-       @item = Item.find(params[:format])
-        item.stock = item.stock - 1
-        @order.items << item
+        item = Item.find(params[:format])
+        if @order.items.include?(item)
+            @i = ItemOrder.where("item_id = ?", item.id)
+            @i.first.quantity += 1
+            @i.first.save
+        else
+            @order.items << item
+        end
+        item.stock -= 1
+        item.save
         flash[:notice] = "Your item has been added."
         redirect_to root_path
     end 
 
-    def destroy
-        @item = Item.find(params[:id])
+    def destroy    
+        item = Item.find(params[:id])
+        
+        #tab = @order.items.where("item_id = ?", item.id)
+        #@order.items.delete(tab.uniq)
         @order.items.delete(item)
+
+        item.stock += 1
+        item.save
+       
         flash[:alert] = "Your item has been removed."
         render "new"
     end
