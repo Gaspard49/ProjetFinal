@@ -51,3 +51,20 @@
         </div>
     </div>
 </div>
+
+
+
+<h3>Comments</h3>
+
+<%= form_for [@item, Comment.new] do |f| %>
+<%= f.text_area :body, placeholder: "Add a comment" %><br/>
+<%= f.submit "Add Comment" %>
+<% end %>
+
+
+  <%= render(partial: 'comments/comment', collection: @item.comments) %>
+
+
+
+
+

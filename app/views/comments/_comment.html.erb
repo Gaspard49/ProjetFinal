@@ -1,0 +1,27 @@
+<div class="container">
+<div class="row">
+<div class="col-sm-1">
+<div class="thumbnail">
+
+            
+            <%=image_tag("avatar.jpg", alt: 'avatar', class:"img-responsive user-photo" ) %>
+  
+</div><!-- /thumbnail -->
+</div><!-- /col-sm-1 -->
+
+<div class="col-sm-5">
+<div class="panel panel-default">
+<div class="panel-heading">
+<strong><%= comment.author.first_name %> <%= comment.author.last_name %></strong> <span class="text-muted"><h5>Submitted <%= time_ago_in_words(comment.created_at) %> ago</h5></span>
+</div>
+<div class="panel-body">
+<%= comment.body %>
+</div><!-- /panel-body -->
+</div><!-- /panel panel-default -->
+</div><!-- /col-sm-5 -->
+</div><!-- /panel panel-default -->
+</div>
+
+
+
+

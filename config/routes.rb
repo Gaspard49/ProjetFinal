@@ -4,12 +4,17 @@ Rails.application.routes.draw do
 
   resources :items do
     resources :pictures, only: [:create]
+    resources :comments
   end
 
+  resources :comments do
+    resources :comments
+  end
 
   devise_for :users, controllers: { registrations: "registrations" }
 
-  resources :users, only: [:show]
+  resources :users
+
   
   resources :orders do
     resources :charges
