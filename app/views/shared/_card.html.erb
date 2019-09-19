@@ -9,7 +9,9 @@
         <ul class="card-product__imgOverlay">
           <li> <%= button_to item_path(item), method: :get do %><i class="fas fa-search"></i><% end %></li>          
           <%if current_user%>          
+           <% if item.stock > 0 %>
           <li> <%= button_to orders_path(item), method: :post do %><i class="fas fa-cart-plus"></i><% end %></li>
+          <% end %>
           <% else %>
              <li> <%= button_to new_user_session_path do %><i class="fas fa-cart-plus"></i><% end %></li>
           <% end %>

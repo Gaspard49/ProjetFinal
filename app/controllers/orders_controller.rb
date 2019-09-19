@@ -14,14 +14,14 @@ class OrdersController < ApplicationController
     end
 
     def create 
-        item = Item.find(params[:format])
+       @item = Item.find(params[:format])
         item.stock = item.stock - 1
         @order.items << item
         redirect_to root_path
     end 
 
     def destroy
-        item = Item.find(params[:id])
+        @item = Item.find(params[:id])
         @order.items.delete(item)
         render "new"
     end
