@@ -131,6 +131,11 @@
                                 </table>
                                 <h4>Order Details</h4>
                                 <table>
+                                   <tr>
+                                    <th>Item</th>
+                                    <th>#</th>
+                                    <th>Price</th>
+                                  </tr>
                                   <% @order.items.each do |item| %>
                                   <tr>
                                     <td><%= item.title%></td>
@@ -138,11 +143,7 @@
                                     <td><%= item.price%>€</td>
                                   </tr>
                                   <% end %>
-                                  <tr>
-                                    <th>Item</th>
-                                    <th>#</th>
-                                    <th>Price</th>
-                                  </tr>
+                               
                                   <tr>
                                     <td colspan="2"><b>Subtotal:</b></td>
                                     <td><%= @order.total%>€</td>

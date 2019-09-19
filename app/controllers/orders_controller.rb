@@ -14,6 +14,7 @@ class OrdersController < ApplicationController
 
     def create 
         item = Item.find(params[:format])
+        item.stock = item.stock - 1
         @order.items << item
         flash[:notice] = "Your item has been added."
         redirect_to root_path
