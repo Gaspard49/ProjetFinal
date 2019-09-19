@@ -124,18 +124,3 @@ end
     @item = Item.last
     @item.picture.attach(io: File.open('app/assets/images/product/dsquared_pant.jpg'), filename: 'dsquared_pant.jpg',  content_type: 'image/jpg')
     JoinTableCategoryItem.create(item_id: @item.id, category_id: @category.id)
-
-
- 
-
-
-
-
-  #Categories Create
-
-
-=begin
-5.times do
-  Order.create(user_id: User.all.sample.id, status: false)
-end
-=end
