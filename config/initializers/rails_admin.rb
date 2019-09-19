@@ -12,7 +12,7 @@ RailsAdmin.config do |config|
     redirect_to main_app.root_path unless warden.user.admin == true
   end
 
-  config.included_models = ["Category", "User", "Item"]
+  config.included_models = ["Category", "User", "Item", "Comment"]
   ## == CancanCan ==
   # config.authorize_with :cancancan
 

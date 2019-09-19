@@ -26,7 +26,7 @@ end
 
     #Admin Create
 
-   User.create(first_name: 'Admin', last_name: 'Admin', email: 'admin43210@yopmail.com',password: 'admin123', admin: true)
+   User.create(first_name: 'Admin', last_name: 'Response', email: 'admin43210@yopmail.com',password: 'admin123', admin: true)
    @user = User.last
    @user.avatar.attach(io: File.open('app/assets/images/avatar.jpg'), filename: 'avatar.jpg',  content_type: 'image/jpg')
 

@@ -54,17 +54,46 @@
 
 
 
-<h3>Comments</h3>
 
-<%= form_for [@item, Comment.new] do |f| %>
-<%= f.text_area :body, placeholder: "Add a comment" %><br/>
-<%= f.submit "Add Comment" %>
-<% end %>
+<!--================Product Description Area =================-->
+	<section class="product_description_area">
+		<div class="container">
+			<ul class="nav nav-tabs" id="myTab" role="tablist">
+				<li class="nav-item">
+					<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+					 aria-selected="false">Comments</a>
+				</li>
+			</ul>
+			<div class="tab-content" id="myTabContent">
+				<div class="tab-pane fade show active" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="comment_list">
+						  <%= render(partial: 'comments/comment', collection: @item.comments) %>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="review_box">
+               <% if current_user %>
+								<h4>Post a comment</h4>
+                <%= form_for [@item, Comment.new], :html => {:class => 'row contact_form'} do |f| %>
+									<div class="col-md-12">
+										<div class="form-group">
+                    <%= f.text_area :body, placeholder: "Add a comment", class: 'form-control' %><br/>
+										</div>
+									</div>
+									<div class="col-md-12 text-right">
+								    <%= f.submit "Add Comment", class:"btn primary-btn"%>
+                 <% end %>
+                 <% else %>
+                 <h4>To post a comment, please Log In.</h4>
+                 <% end %>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-
-  <%= render(partial: 'comments/comment', collection: @item.comments) %>
-
-
-
-
+	</section>
+	<!--================End Product Description Area =================-->
 

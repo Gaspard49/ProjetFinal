@@ -1,30 +1,35 @@
-  <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
-<div class="container">
-<div class="row">
-<div class="col-sm-1">
-<div class="thumbnail">
-<%if User.find(comment.author).avatar.attached?%>
-            <%= image_tag User.find(comment.author).avatar, class:"img-responsive user-photo" ,alt: 'avatar' %>
-          <%else%>
-            <%=image_tag("avatar.jpg", alt: 'avatar', class:"img-responsive user-photo" ) %>
-          <%end%>
-</div><!-- /thumbnail -->
-</div><!-- /col-sm-1 -->
-
-<div class="col-sm-5">
-<div class="panel panel-default">
-<div class="panel-heading">
-<strong><%= User.find(comment.author).first_name %> <%= User.find(comment.author).last_name %></strong> <span class="text-muted"><h5>Submitted <%= time_ago_in_words(comment.created_at) %> ago</h5></span>
-</div>
-<div class="panel-body">
-<%= comment.body %>
-</div><!-- /panel-body -->
-</div><!-- /panel panel-default -->
-</div><!-- /col-sm-5 -->
-</div><!-- /panel panel-default -->
-</div>
+  	<div class="review_item">
+									<div class="media ">
+										<div class="d-flex">
+											<%if User.find(comment.author).avatar.attached?%>
+                        <%= image_tag User.find(comment.author).avatar, class:"img-responsive img-rounded", style:"max-height: 50px; max-width: 50px;" ,alt: 'avatar' %>
+                     <%else%>
+                        <%=image_tag("avatar.jpg", alt: 'avatar',  class:"img-responsive img-rounded", style:"max-height: 50px; max-width: 50px;") %>
+                    <%end%>
+										</div>
+										<div class="media-body">
+                    <% if User.find(comment.author).first_name && User.find(comment.author).last_name%>
+											<h4><%= User.find(comment.author).first_name %> <%= User.find(comment.author).last_name %></h4>
+                      <%else%>
+                      <h4>Anonymous</h4>
+                      <%end%>
+											<h5>Submitted <%= time_ago_in_words(comment.created_at) %> ago</h5>
+										</div>
+									</div>
+                  	<p style='width:20vw'><%= comment.body %></p>
+                  <small><div style="padding-left:2em">
+                    <%= render comment.comments %></small>
+                </div>
+							</div>
 
 
+    
 
-
+  <% if current_user &&current_user.admin == true %>
+  <%= form_for [comment, Comment.new] do |f| %>
+                        <%= f.text_area :body, placeholder: "Add a Reply" %><br/>
+                          <%= f.submit "Reply"  %>
+                      <% end %>
+											<a class="reply_btn" href="#">Reply</a>
+ <% end %>
