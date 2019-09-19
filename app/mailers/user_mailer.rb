@@ -27,4 +27,5 @@ class UserMailer < ApplicationMailer
     @subscriber = subscriber
     mail(to: @subscriber.email, subject: 'Newsletter !')
   end
+
 end
