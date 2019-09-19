@@ -44,7 +44,7 @@ class ChargesController < ApplicationController
   end
 
   def admin_order_paid
-    UserMailer.order_paid(@order)
+    AdminMailer.order_paid(@order).deliver_now
   end
 
 end
