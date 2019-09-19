@@ -24,9 +24,7 @@
 							</div>
 
 
-    
-
-  <% if current_user &&current_user.admin == true %>
+  <% if current_user && current_user.admin == true %>
   <%= form_for [comment, Comment.new] do |f| %>
                         <%= f.text_area :body, placeholder: "Add a Reply" %><br/>
                           <%= f.submit "Reply"  %>
