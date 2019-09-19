@@ -21,9 +21,10 @@
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Categories</a>
                 <ul class="dropdown-menu">
-                <% @categories.each do |category| %>
-        <li class="nav-item"><a class="nav-link" href="<%= category_path(category) %>"><%= category.name %></a></li>
-       <% end %>
+                 <li class="nav-item"><a class="nav-link" href="<%= items_path %>"> All </a></li>
+                 <% @categories.each do |category| %>
+                    <li class="nav-item"><a class="nav-link" href="<%= category_path(category) %>"><%= category.name %></a></li>
+                  <% end %>
                 </ul>
 							</li>
               
