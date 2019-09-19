@@ -5,8 +5,7 @@ class OrdersController < ApplicationController
     def index
     end
 
-    def new
-        
+    def new  
     end
 
     def show
@@ -17,12 +16,14 @@ class OrdersController < ApplicationController
        @item = Item.find(params[:format])
         item.stock = item.stock - 1
         @order.items << item
+        flash[:notice] = "Your item has been added."
         redirect_to root_path
     end 
 
     def destroy
         @item = Item.find(params[:id])
         @order.items.delete(item)
+        flash[:alert] = "Your item has been removed."
         render "new"
     end
 end

@@ -6,7 +6,6 @@ class User < ApplicationRecord
   has_many :orders
   has_one_attached :avatar
   validates :email, presence: true
-
   after_create :welcome_send, :new_order
   
   def new_order 
