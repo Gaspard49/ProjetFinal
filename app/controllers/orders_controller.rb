@@ -30,16 +30,14 @@ class OrdersController < ApplicationController
 
     def destroy    
         item = Item.find(params[:id])
-        
-        #tab = @order.items.where("item_id = ?", item.id)
-        #@order.items.delete(tab.uniq)
+
         @order.items.delete(item)
 
         item.stock += 1
         item.save
        
         flash[:alert] = "Your item has been removed."
-        render "new"
+        redirect_to root_path
     end
 end
     
