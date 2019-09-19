@@ -6,8 +6,10 @@ class SubscribersController < ApplicationController
   def create
     @subscriber = Subscriber.new(subscriber_params)
       if @subscriber.save
+        flash[:notice] = "You are successfully registered."
         redirect_to root_path
       else
+        flash[:alert] = "Try another email"
         redirect_to root_path
       end
   end

@@ -30,13 +30,21 @@
                         <%= category.name %> 
                         <% end %>
                         </a></li>
-                        <li><a href="#"><span>Availibility</span> : In Stock</a></li>
+                        <% if @item.stock > 0 %>
+                        <li><a href="#"><span>Availibility</span> :  <strong> Only <%= @item.stock %> remaining! </strong> </a></li>
+                        <% else %>
+                        <li><a href="#"><span>Availibility</span> : Out of Stock</a></li>
+                        <% end %>
                     </ul>
                     <p><%= @item.description %></p>
+                     <% if @item.stock > 0 %>
                     <% if current_user %>
                     <%= button_to "Add to card", orders_path(@item), method: :post, class: "button primary-btn" %>
                    <% else %>
                    <%= button_to "Add to card", new_user_session_path, class: "button primary-btn" %>
+                     <% end %>
+                     <% else %>
+                      <h2>OUT OF STOCK</h2>
                      <% end %>
                 </div>
             </div>
