@@ -28,7 +28,6 @@ end
 
    User.create(first_name: 'Admin', last_name: 'Admin', email: 'admin@admin.com',password: 'admin123', admin: true)
    @user = User.last
-   @user.avatar.attach(io: File.open('app/assets/images/avatar.jpg'), filename: 'avatar.jpg',  content_type: 'image/jpg')
 
 
 
