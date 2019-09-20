@@ -31,7 +31,6 @@ class OrdersController < ApplicationController
 
     def destroy    
         item = Item.find(params[:id])
-
         @order.items.delete(item)
 
         item.stock += 1
