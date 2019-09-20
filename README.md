@@ -1,6 +1,7 @@
-To access at Admin profil
+To access at Admin profil :
 email: admin43210@yopmail.com
 pass: admin123
+Stripe is on test mode
 
 # v1.0
 - Home Page with products
