@@ -27,6 +27,10 @@
  *= require main.css
  */
 
+ .itemCardIcon{
+  font-size: 1em; color: red;
+
+ }
 
  .card-product__img{
     height:250px;
