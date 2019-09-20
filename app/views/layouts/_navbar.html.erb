@@ -18,11 +18,14 @@
               <li class="nav-item active"> <%= link_to 'Home', root_path, data: { turbolinks: false }, class: 'nav-link' %></li>
               <li class="nav-item active"> <%= link_to 'Contact', contact_index_path, data: { turbolinks: false }, class: 'nav-link' %></li>
               <li class="nav-item submenu dropdown">
-              <%= link_to 'Categories', class: "nav-link dropdown-toggle", title: '', data: { toggle: 'dropdown'}, role:'button', aria: {hashpopup: 'true', expanded: 'false'} %>
+                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                  aria-expanded="false">Categories</a>
                 <ul class="dropdown-menu">
-                 <li class="nav-item"><a class="nav-link" href="<%= items_path %>"> All </a></li>
+
+                 <li class="nav-item"><%= link_to "All", items_path, data: { turbolinks: false }, class: 'nav-link' %>
+                 </li>
                  <% @categories.each do |category| %>
-                    <li class="nav-item"><a class="nav-link" href="<%= category_path(category) %>"><%= category.name %></a></li>
+                    <li class="nav-item"><%= link_to category.name, category_path(category), data: { turbolinks: false }, class: 'nav-link' %></li>
                   <% end %>
                 </ul>
 							</li>
