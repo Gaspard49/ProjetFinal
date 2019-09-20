@@ -12,7 +12,7 @@
  *
  *= require_tree .
  *= require_self
- @import("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+ 
 
  *= require bootstrap.min
  *= require fontawesome/css/all.min
@@ -22,7 +22,6 @@
  *= require nice-select
  *= require owl-carousel/owl.theme.default.min
  *= require owl-carousel/owl.carousel.min
-
  
  *= require style.css
  *= require main.css
