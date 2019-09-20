@@ -140,7 +140,7 @@
     margin-left: 1em; }
 
 
-    @media only screen and (max-width: 700px) {
+ @media only screen and (max-width: 700px) {
     
 html, body {
 	width:100%;
@@ -148,6 +148,9 @@ html, body {
 	padding:0;
 	margin:0;
 	overflow-x:hidden;
+}
+#parallax-1{
+      display: none;
 }
 #skrollr-body {min-height: 1px;}
 .skrollable {
