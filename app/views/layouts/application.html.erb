@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html id='skrollr-body'>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-    <link href="https://fonts.googleapis.com/css?family=Oswald:400,500,600" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
 
-    <title>CLOTH-UP</title>
-    <%= favicon_link_tag asset_path('b-logo2.png') %>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    
+  <link href="https://fonts.googleapis.com/css?family=Oswald:400,500,600" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
 
-  <script src="https://kit.fontawesome.com/1aecebca70.js" integrity="sha384-tCIa9x35rFwAnPYwDCoqImEiB9Ai31jfzeslK4Q53KZAXSFi24Px912eIpefo9Bj" crossorigin="anonymous"></script>
+  <title>CLOTH-UP</title>
+  <%= favicon_link_tag asset_path('b-logo2.png') %>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <body>
+  <script src="https://kit.fontawesome.com/1aecebca70.js" integrity="sha384-tCIa9x35rFwAnPYwDCoqImEiB9Ai31jfzeslK4Q53KZAXSFi24Px912eIpefo9Bj" crossorigin="anonymous">
+  </script>
+</head>
 
-      <div id="skrollr-body">
-        <%= render 'layouts/navbar' %>
-        <%= render 'layouts/flash'%>
-        <%= yield %>
-        <%= render 'layouts/footer' %>
-      </div>
-      
-  </body>
+<body>
+
+  <div id="skrollr-body">
+    <%= render 'layouts/navbar' %>
+    <%= render 'layouts/flash'%>
+    <%= yield %>
+    <%= render 'layouts/footer' %>
+  </div>
+
+</body>
+
 </html>
