@@ -1,16 +1,13 @@
 <tr>
     <td>
-        <%if item.picture.attached?%>
-            <%= image_tag item.picture, alt: 'picture' %>
-        <% else %>
-            <%=image_tag("product/product1.png", class: "card-img", alt: 'product1') %>
-        <% end %>
+        <%= image_tag item.picture, alt: 'picture' %>
     </td>
     <td>
-        <p><%= item.title%>
-        <% item.categories.each do |category| %>
-        <%=  category.name %>
-       <% end %>
+        <p>
+            <%= item.title%>
+                <% item.categories.each do |category| %>
+                    <%=  category.name %>
+            <% end %>
         </p>
     </td>
     <td>

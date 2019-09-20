@@ -1,13 +1,9 @@
- <%= link_to category_path(category) do %>
+<%= link_to category_path(category) do %>
         <div class="hero-carousel__slide">
-        <%if category.picture.attached?%>
-            <%= image_tag category.picture,  class: "img-fluid", alt: 'hero_slide1' %>
-        <% else %>
-            <%=image_tag("home/hero-slide1.png", class: "img-fluid", alt: 'hero_slide1') %>
-        <% end %>
+          <%= image_tag category.picture,  class: "img-fluid", alt: 'hero_slide1' %>
           <div class="hero-carousel__slideOverlay">
             <h3><%= category.name %> </h3>
             <p>Accessories Item</p>
           </div>
         </div>
-         <% end %>
+<% end %>
