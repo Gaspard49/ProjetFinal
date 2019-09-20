@@ -55,11 +55,11 @@
               <% if user_signed_in? %>
  
             <ul class="nav-shop">
-              <li class="nav-item"><%= link_to '<i class="fas fa-shopping-cart"></i>'.html_safe, new_order_path, controller: "orders" %></li>
+              <li class="nav-item"><%= link_to '<i class="fas fa-shopping-cart"></i>'.html_safe, new_order_path, controller: "orders", data: { turbolinks: false } %></li>
                <% if current_user.admin == true %>
                <li class="nav-item"><%= link_to('Admin', rails_admin_path, class: "button button-header") %></li>
                <% else %>
-               <li class="nav-item"><%= link_to "Buy now", new_order_path, class: "button button-header" %></li>
+               <li class="nav-item"><%= link_to "Buy now", new_order_path, class: "button button-header", data: { turbolinks: false } %></li>
                <% end %>
             </ul>
             <% end %>

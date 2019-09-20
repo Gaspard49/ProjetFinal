@@ -27,14 +27,6 @@
  *= require main.css
  */
 
-*{
-
-  -webkit-overflow-scrolling: touch;
-}
-
-body{
-  overflow: scroll;
-}
 
  .card-product__img{
     height:250px;
