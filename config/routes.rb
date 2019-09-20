@@ -15,12 +15,11 @@ Rails.application.routes.draw do
 
   resources :users
 
-  
   resources :orders do
     resources :charges
   end
 
-  resources :subscribers
+  resources :subscribers, only: [:index, :create]
   resources :categories
   resources :contact, only: [:index]
   resources :terms, only: [:index]

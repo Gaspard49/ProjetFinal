@@ -4,7 +4,7 @@
           <%if item.picture.attached?%>
               <%= image_tag item.picture, alt: 'picture', :class =>"card-img" %>
           <% else %>
-              <%=image_tag("product/product1.png", class: "card-img", alt: 'product1') %>
+              <%=image_tag("logo-cloth-app.png", class: "card-img", alt: 'product1') %>
           <% end %>
         <ul class="card-product__imgOverlay">
           <li> <%= button_to item_path(item), method: :get do %><i class="fas fa-search"></i><% end %></li>

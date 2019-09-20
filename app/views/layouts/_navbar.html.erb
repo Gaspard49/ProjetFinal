@@ -4,7 +4,7 @@
         <div class="container">
         
          <%= link_to root_path, data: { turbolinks: false } do %>
-          <%=image_tag("b-logo.png", class: "navbar-brand logo_h", alt: 'logo', :style => "width: 5rem;" ) %>
+          <%= image_tag("b-logo.png", class: "navbar-brand logo_h", alt: 'logo', :style => "width: 5rem;" ) %>
            <% end %>
            
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -20,12 +20,12 @@
               <li class="nav-item submenu dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Categories</a>
-                <ul class="dropdown-menu">
-                 <li class="nav-item"><a class="nav-link" href="<%= items_path %>"> All </a></li>
-                 <% @categories.each do |category| %>
-                    <li class="nav-item"><a class="nav-link" href="<%= category_path(category) %>"><%= category.name %></a></li>
-                  <% end %>
-                </ul>
+                  <ul class="dropdown-menu">
+                    <li class="nav-item"><%= link_to "All", items_path, data: { turbolinks: false }, class: 'nav-link' %></li>
+                    <% @categories.each do |category| %>
+                      <li class="nav-item"><%= link_to category.name, category_path(category), data: { turbolinks: false }, class: 'nav-link' %></li>
+                    <% end %>
+                  </ul>
 							</li>
               
                <% if current_user == nil %>
@@ -41,19 +41,19 @@
               	<li class="nav-item submenu dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false"> Account </a>
-               <ul class="dropdown-menu">
-              <li class="nav-item"><%= link_to("My Profile", user_path(current_user), class: "nav-link" )%></li>
-              <li class="nav-item"><%= link_to('Edit Profile', edit_user_registration_path, class: "nav-link") %></li>
-              <li class="nav-item"><%= link_to('Last Orders', orders_path, class: "nav-link") %></li>
+              <ul class="dropdown-menu">
+                <li class="nav-item"><%= link_to('Edit Profile', edit_user_registration_path, class: "nav-link") %></li>
+                <li class="nav-item"><%= link_to("My Profile", user_path(current_user), class: "nav-link" )%></li>
+                <li class="nav-item"><%= link_to('Last Orders', orders_path, class: "nav-link") %></li>
                 <% if current_user.admin == true %>
                   <li class="nav-item"><%= link_to('Admin', rails_admin_path, class: "nav-link") %></li>
                 <% end %>
-              <li class="nav-item"><%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link") %></li>
+                <li class="nav-item"><%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link") %></li>
               </ul>
               <% end %>
             </ul>
-              <% if user_signed_in? %>
- 
+
+            <% if user_signed_in? %>
             <ul class="nav-shop">
               <li class="nav-item"><%= link_to '<i class="fas fa-shopping-cart"></i>'.html_safe, new_order_path, controller: "orders", data: { turbolinks: false } %></li>
                <% if current_user.admin == true %>
