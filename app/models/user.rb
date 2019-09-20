@@ -9,8 +9,6 @@ class User < ApplicationRecord
   after_create :welcome_send, :new_order
   has_many :comments, as: :commentable
   
-
-
   def new_order 
     Order.create(user_id:self.id, status: true) 
   end
