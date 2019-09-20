@@ -1,63 +1,48 @@
-<!-- ================ start banner area ================= -->
+
+	<!-- ================ start banner area ================= -->	
 <section class="blog-banner-area" id="category">
   <div class="container h-100">
-    <div class="blog-banner">
-      <div class="text-center">
-        <h1>Shopping Cart</h1>
-      </div>
-    </div>
+	<div class="blog-banner">
+	  <div class="text-center">
+		<h1>Shopping Cart</h1>
+			<nav aria-label="breadcrumb" class="banner-breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Shopping Cart</li>
+            </ol>
+            </nav>
+	  </div>
+	</div>
   </div>
-</section>
-<!-- ================ end banner area ================= -->
-
-<!--================Cart Area =================-->
-<section class="cart_area">
-  <div class="container">
-    <div class="cart_inner">
-      <div class="table">
-        <% if @order.total > 0%>
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col">Product</th>
-              <th scope="col">Title</th>
-              <th scope="col">Price</th>
-              <th scope="col">Quantity</th>
-            </tr>
-          </thead>
-          <tbody class="tbody">
-            <% @order.items.each do |item| %>
-              <%= render 'shared/itemsCard', item: item %>
-            <% end %>
-          </tbody>
-        </table>
-        <div class="d-flex flex-column align-items-end">
-          <h1><%= @order.total %> €</h1>
-          <%= link_to 'Order', new_order_charge_path(@order), class:"button button-subscribe"%>
+ </section>
+    <!-- ================ end banner area ================= -->
+    
+  <!--================Cart Area =================-->
+  <section class="cart_area">
+        <div class="container">
+            <div class="cart_inner">
+                <div class="table">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Product</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            <% @order.items.each do |item| %>
+                              <%= render 'shared/itemsCard', item: item %>
+                            <% end %>
+                        </tbody>
+                    </table>
+                    <div class="d-flex flex-column align-items-end">
+                        <h1><%= @order.total %> €</h1>
+                    <%= link_to 'Order', new_order_charge_path(@order), class:"button button-subscribe"%>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <!-- ================ trending product section start ================= -->
-        <% else %>
-        <h1>Your cart is empty</h1>
-        <section class="section-margin calc-60px">
-          <hr>
-          <div class="container">
-            <div class="section-intro pb-60px">
-              <p>Discover more</p>
-              <h2>Best <span class="section-intro__style">Articles</span></h2>
-            </div>
-            <div class="owl-carousel owl-theme" id="bestSellerCarousel">
-              <% @items.each do |item| %>
-              <%= render 'shared/card', item: item %>
-              <% end %>
-            </div>
-          </div>
-          <hr>
-        </section>
-        <!-- ================ trending product section end ================= -->
-        <% end%>
-      </div>
-    </div>
-  </div>
 </section>
-<!--================ end Cart Area =================-->
+  <!--================ end Cart Area =================-->
