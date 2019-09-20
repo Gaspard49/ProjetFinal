@@ -39,7 +39,7 @@
                     </table>
                     <div class="d-flex flex-column align-items-end">
                         <h1><%= @order.total %> €</h1>
-                    <%= link_to 'Order', new_order_charge_path(@order), class:"button button-subscribe"%>
+                    <%= link_to 'Order', new_order_charge_path(@order), class:"button button-subscribe", data: { turbolinks: false } %>
                     </div>
                 </div>
             </div>
