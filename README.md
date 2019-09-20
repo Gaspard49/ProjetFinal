@@ -32,4 +32,4 @@ pass: admin123
 - Béatrice charrier
 
 # Production link
-- https://dashboard.heroku.com/apps/projet-final-caen
+- https://projet-final-caen.herokuapp.com
