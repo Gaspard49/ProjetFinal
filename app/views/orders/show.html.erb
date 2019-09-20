@@ -1,39 +1,39 @@
-<!-- ================ start banner area ================= -->	
+<!-- ================ start banner area ================= -->
 <section class="blog-banner-area" id="category">
   <div class="container h-100">
-	<div class="blog-banner">
-	  <div class="text-center">
-		<h1>Last Order</h1>
-	  </div>
-	</div>
+    <div class="blog-banner">
+      <div class="text-center">
+        <h1>Last Order</h1>
+      </div>
+    </div>
   </div>
- </section>
-    <!-- ================ end banner area ================= -->
-    
-  <!--================Cart Area =================-->
-<section class="cart_area">
-        <div class="container">
-            <div class="cart_inner">
-                <div class="table">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th scope="col">Product</th>
-                                <th scope="col">Title</th>
-                                <th scope="col">Price</th>
-                            </tr>
-                        </thead>
-                        <tbody class="tbody">
-                            <% @order.items.each do |item| %>
-                              <%= render 'shared/showItemsCard', item: item %>
-                            <% end %>
-                        </tbody>
-                    </table>
-                    <div class="d-flex flex-column align-items-end">
-                        <h1><%= @order.total %> €</h1>
-                    </div>
-                </div>
-            </div>
-        </div>                  
 </section>
-  <!--================ end Cart Area =================-->
+<!-- ================ end banner area ================= -->
+
+<!--================Cart Area =================-->
+<section class="cart_area">
+  <div class="container">
+    <div class="cart_inner">
+      <div class="table">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Product</th>
+              <th scope="col">Title</th>
+              <th scope="col">Price</th>
+            </tr>
+          </thead>
+          <tbody class="tbody">
+            <% @order.items.each do |item| %>
+              <%= render 'shared/showItemsCard', item: item %>
+            <% end %>
+          </tbody>
+        </table>
+        <div class="d-flex flex-column align-items-end">
+          <h1><%= @order.total %> €</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--================ end Cart Area =================-->
