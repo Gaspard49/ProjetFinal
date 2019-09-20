@@ -1,20 +1,20 @@
-  <!-- ================ trending product section start ================= -->  
-   
-    <section class="section-margin calc-60px">
-      <div class="container">
-        <div class="section-intro pb-60px">
-          <p>Just made for you</p>
-          <h2> All Our <span class="section-intro__style">Products</span></h2>
-        </div>
-        <div class="row">
-            <% @items.each do |item| %>
-              <%= render 'shared/card2', item: item %>
-           <% end %>
-          </div>
-        </div>
-      </div>
-    </section>
-    <div class="apple_pagination">
+<!-- ================ trending product section start ================= -->
+
+<section class="section-margin calc-60px">
+  <div class="container">
+    <div class="section-intro pb-60px">
+      <p>Just made for you</p>
+      <h2> All Our <span class="section-intro__style">Products</span></h2>
+    </div>
+    <div class="row">
+      <% @items.each do |item| %>
+      <%= render 'shared/card2', item: item %>
+      <% end %>
+    </div>
+  </div>
+  </div>
+</section>
+<div class="apple_pagination">
   <%= will_paginate @items, :container => false %>
 </div>
-    <!-- ================ trending product section end ================= -->  
+<!-- ================ trending product section end ================= -->
