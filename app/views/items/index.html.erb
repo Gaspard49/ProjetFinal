@@ -1,4 +1,5 @@
   <!-- ================ trending product section start ================= -->  
+   
     <section class="section-margin calc-60px">
       <div class="container">
         <div class="section-intro pb-60px">
@@ -13,4 +14,7 @@
         </div>
       </div>
     </section>
+    <div class="apple_pagination">
+  <%= will_paginate @items, :container => false %>
+</div>
     <!-- ================ trending product section end ================= -->  

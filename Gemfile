@@ -14,7 +14,8 @@ gem 'rails_admin_rollincode', '~> 1.0'
 gem 'rails', '~> 5.2.3'
 gem 'devise'
 gem 'letter_opener'
-
+gem 'will_paginate', '~> 3.1.1'
+gem 'will_paginate-bootstrap' 
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
