@@ -14,9 +14,13 @@ pass: admin123
 - Cart page and confirmation
 
 # v2.1
-- Comments on items
+- Comments on items to ask question
+- Only admin can reply
 
 # v3.0
 - Admin Page and his dashboard / Edit profile
 
 # v4.0  Improve design and add other funtions:)
+- Subscriber
+- Stock Management
+- Order recap
