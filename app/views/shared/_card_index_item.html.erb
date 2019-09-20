@@ -1,11 +1,7 @@
 <div class="col-md-6 col-lg-4 col-xl-3">
     <div class="card text-center card-product">
       <div class="card-product__img">
-          <%if item.picture.attached?%>
-              <%= image_tag item.picture, alt: 'picture', :class =>"card-img" %>
-          <% else %>
-              <%=image_tag("logo-cloth-app.png", class: "card-img", alt: 'product1') %>
-          <% end %>
+          <%= image_tag item.picture, alt: 'picture', :class =>"card-img" %>
         <ul class="card-product__imgOverlay">
           <li> <%= button_to item_path(item), method: :get do %><i class="fas fa-search"></i><% end %></li>
           <%if current_user%>          
