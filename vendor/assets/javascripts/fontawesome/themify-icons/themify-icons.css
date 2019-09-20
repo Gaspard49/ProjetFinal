@@ -143,10 +143,10 @@
 .ti-arrow-up:before {
 	content: "\e627";
 }
-.ti-arrow-right:before {
+.fas fa-arrow-right:before {
 	content: "\e628";
 }
-.ti-arrow-left:before {
+.fas fa-arrow-left:before {
 	content: "\e629";
 }
 .ti-arrow-down:before {
