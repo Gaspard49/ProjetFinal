@@ -25,3 +25,8 @@ pass: admin123
 - Subscriber
 - Stock Management
 - Order recap
+
+# Team
+- Audebert Adrien
+- Gaspard Tertrais
+- Béatrice charrier
