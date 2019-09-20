@@ -7,6 +7,7 @@ class OrdersController < ApplicationController
 
     def new
         @item_order = ItemOrder.where("order_id = ?", @order.id)
+        @items = Item.all
     end
 
     def show
