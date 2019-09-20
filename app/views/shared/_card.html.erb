@@ -1,13 +1,8 @@
-
     <div class="card text-center card-product">
       <div class="card-product__img">
-          <%if item.picture.attached?%>
-              <%= image_tag item.picture, alt: 'picture', :class =>"card-img" %>
-          <% else %>
-              <%=image_tag("product/product1.png", class: "card-img", alt: 'product1') %>
-          <% end %>
+          <%= image_tag item.picture, alt: 'picture', :class =>"card-img" %>   
         <ul class="card-product__imgOverlay">
-          <li> <%= button_to item_path(item), method: :get do %><i class="fas fa-search"></i><% end %></li>          
+          <li><%= button_to item_path(item), method: :get do %><i class="fas fa-search"></i><% end %></li>          
           <%if current_user%>          
            <% if item.stock > 0 %>
           <li> <%= button_to orders_path(item), method: :post do %><i class="fas fa-cart-plus"></i><% end %></li>
@@ -27,5 +22,3 @@
         <p class="card-product__price"><%= item.price %>€</p>
       </div>
     </div>
-
-
