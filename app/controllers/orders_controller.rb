@@ -26,7 +26,7 @@ class OrdersController < ApplicationController
         item.stock -= 1
         item.save
         flash[:notice] = "Your item has been added."
-        redirect_to root_path
+        redirect_to new_order_path
     end 
 
     def destroy    
@@ -38,7 +38,7 @@ class OrdersController < ApplicationController
         item.save
        
         flash[:alert] = "Your item has been removed."
-        redirect_to root_path
+        redirect_to new_order_path
     end
 end
     
