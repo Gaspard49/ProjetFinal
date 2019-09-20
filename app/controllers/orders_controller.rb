@@ -31,13 +31,19 @@ class OrdersController < ApplicationController
 
     def destroy    
         item = Item.find(params[:id])
+        @item_order = ItemOrder.where("order_id = ?", @order.id)
+        i = @item_order.where("item_id = ?", item.id)
+        
+        puts "#" * 100
+        value = i.map { |x| x.quantity }
+        puts value[0]
+        puts "#" * 100
         @order.items.delete(item)
-
-        item.stock += 1
+        item.stock += value[0]
         item.save
        
         flash[:alert] = "Your item has been removed."
         redirect_to new_order_path
     end
-end
+end 
     
