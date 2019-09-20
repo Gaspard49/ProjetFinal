@@ -1,5 +1,7 @@
- <li><a href="#"><%= item.title%>
-  <% item.categories.each do |category| %>
+<li>
+      <%= item.title%>
+      <% item.categories.each do |category| %>
         <%=  category.name %>
-       <% end %>
-  <span class="middle">x 01</span> <span class="last"><%= item.price%> €</span></a></li>
+      <% end %>
+      <span class="middle">x 01</span> <span class="last"><%= item.price%> €</span></a>
+</li>
