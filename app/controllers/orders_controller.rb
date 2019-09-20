@@ -26,19 +26,20 @@ class OrdersController < ApplicationController
         item.stock -= 1
         item.save
         flash[:notice] = "Your item has been added."
-        redirect_to root_path
+        redirect_to new_order_path
     end 
 
     def destroy    
         item = Item.find(params[:id])
-
+        @i = ItemOrder.where("item_id = ?", item.id)
         @order.items.delete(item)
-
+        puts "#" * 100
+        puts "#" * 100
         item.stock += 1
         item.save
        
         flash[:alert] = "Your item has been removed."
-        redirect_to root_path
+        redirect_to new_order_path
     end
-end
+end 
     
