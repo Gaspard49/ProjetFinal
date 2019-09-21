@@ -30,8 +30,6 @@ RailsAdmin.config do |config|
 
   config.actions do
     dashboard do
-      ga_key '162320748701-8b4u1ac8legik2p548ep1v3ljf0j1271.apps.googleusercontent.com'
-      ga_chart_id 'ga:YYYYYYYYY'
       ga_start_date '60daysAgo'
       ga_end_date 'today'
       ga_metrics 'ga:sessions,ga:pageviews'
