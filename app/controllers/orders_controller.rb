@@ -45,5 +45,7 @@ class OrdersController < ApplicationController
       flash[:alert] = "Your item has been removed."
       redirect_to new_order_path
   end
+
+  
 end 
   
