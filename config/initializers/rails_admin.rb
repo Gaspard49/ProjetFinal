@@ -29,7 +29,13 @@ RailsAdmin.config do |config|
   # config.show_gravatar = true
 
   config.actions do
-    dashboard                     # mandatory
+    dashboard do
+      ga_key '162320748701-8b4u1ac8legik2p548ep1v3ljf0j1271.apps.googleusercontent.com'
+      ga_chart_id 'ga:YYYYYYYYY'
+      ga_start_date '60daysAgo'
+      ga_end_date 'today'
+      ga_metrics 'ga:sessions,ga:pageviews'
+    end                    # mandatory
     index                         # mandatory
     new
     export
@@ -39,8 +45,11 @@ RailsAdmin.config do |config|
     delete
     show_in_app
 
+  
     ## With an audit adapter, you can add:
     # history_index
     # history_show
   end
 end
+
+

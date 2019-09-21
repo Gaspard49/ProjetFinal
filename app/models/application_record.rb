@@ -2,7 +2,11 @@ class ApplicationRecord < ActiveRecord::Base
   self.abstract_class = true
 
   def total
-    items.sum(&:price).round(2)
+    sum = 0
+    self.item_orders.each do |order|
+      sum += order.item.price * order.quantity
+   end
+     return sum.round(2)
   end
-
+  
 end
