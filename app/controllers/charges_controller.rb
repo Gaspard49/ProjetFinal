@@ -2,12 +2,16 @@ class ChargesController < ApplicationController
   include CurrentCart
   before_action :set_cart, only: [:create, :new]
   before_action :set_adress
+  before_action :empty_cart
   after_action :after_payment, only: [:create]
   after_action :order_send, only: [:create]
   after_action :admin_order_paid, only: [:create]
 
   def new
     @user = current_user
+  end
+
+  def index
   end
   
   def create
@@ -54,6 +58,13 @@ class ChargesController < ApplicationController
 
   def admin_order_paid
     AdminMailer.order_paid(@order).deliver_now
+  end
+
+  def empty_cart
+    if @order.total == 0
+      flash[:alert] = "Your cart is empty"
+      redirect_to new_order_path
+    end
   end
 
 end
