@@ -1,6 +1,7 @@
 class ChargesController < ApplicationController
   include CurrentCart
   before_action :set_cart, only: [:create, :new]
+  before_action :set_adress
   after_action :after_payment, only: [:create]
   after_action :order_send, only: [:create]
   after_action :admin_order_paid, only: [:create]
@@ -33,6 +34,14 @@ class ChargesController < ApplicationController
   end
 
   private
+
+  def set_adress
+    @user = current_user
+    if @user.address == nil && @user.zip_code == nil && @user.city == nil
+      flash[:alert] = "Please set your address, zip code and city to proceed your order."
+      redirect_to edit_user_registration_path(@user)
+    end
+  end
 
   def order_send
     UserMailer.order_email(@user).deliver_now

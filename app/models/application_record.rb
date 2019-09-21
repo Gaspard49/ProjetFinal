@@ -4,9 +4,9 @@ class ApplicationRecord < ActiveRecord::Base
   def total
     sum = 0
     self.item_orders.each do |order|
-      sum += (order.item.price.round(2))*order.quantity
+      sum += order.item.price * order.quantity
    end
-     return sum
+     return sum.round(2)
   end
   
 end
