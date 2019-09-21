@@ -17,7 +17,7 @@ JoinTableCategoryItem.delete_all
 
 puts "Delete done!"
 #Users Create
-=begin
+
 2.times do
   User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 65), city: Faker::Address.city, zip_code:  Faker::Address.zip_code, address: Faker::Address.street_address ,password: 'password', admin: false)
   @user = User.last
@@ -30,7 +30,7 @@ end
    User.create(first_name: 'Admin', last_name: 'Response', email: 'admin43210@yopmail.com',password: 'admin123', admin: true)
    @user = User.last
    @user.avatar.attach(io: File.open('app/assets/images/avatar.jpg'), filename: 'avatar.jpg',  content_type: 'image/jpg')
-=end
+
 
   #Categories Shoes
 
