@@ -17,7 +17,6 @@ gem 'devise'
 gem 'letter_opener'
 gem 'will_paginate', '~> 3.1.1'
 gem 'will_paginate-bootstrap' 
-gem 'mailjet'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
