@@ -1,7 +1,6 @@
 # Load the Rails application.
 require_relative 'application'
 
-config.action_mailer.delivery_method = :mailjet_api
 # Initialize the Rails application.
 Rails.application.initialize!
 

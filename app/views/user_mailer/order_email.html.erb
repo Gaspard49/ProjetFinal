@@ -139,7 +139,13 @@
                                   <% @order.items.each do |item| %>
                                   <tr>
                                     <td><%= item.title%></td>
-                                    <td>1</td>
+                                    <td> 
+                                    <% @item_order.each do |i| %>
+                                      <% if i.item_id === item.id %>  
+                                        <%= i.quantity %>
+                                      <% end %>
+                                     <% end %>
+                                     </td>
                                     <td><%= item.price%>€</td>
                                   </tr>
                                   <% end %>

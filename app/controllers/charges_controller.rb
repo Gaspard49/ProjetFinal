@@ -9,6 +9,7 @@ class ChargesController < ApplicationController
 
   def new
     @user = current_user
+    @item_order = ItemOrder.all
   end
 
   def index
@@ -16,6 +17,7 @@ class ChargesController < ApplicationController
   
   def create
     # Amount in cents
+    @item_order = ItemOrder.all
     @user = current_user
     @amount = @order.total * 100
     @amount = @amount.to_i

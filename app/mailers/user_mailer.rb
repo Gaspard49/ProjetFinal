@@ -16,6 +16,7 @@ class UserMailer < ApplicationMailer
     #on récupère l'instance user pour ensuite pouvoir la passer à la view en @user
     @user = user 
     @order = Order.find_by(user_id: @user.id, status: true)
+    @item_order = ItemOrder.all
     #on définit une variable @url qu'on utilisera dans la view d’e-mail
     @url  = 'https://projet-final-caen.herokuapp.com/users/sign_in'  
 
