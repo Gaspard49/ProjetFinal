@@ -14,6 +14,7 @@
   <!--================Cart Area =================-->
   <section class="cart_area">
         <div class="container">
+        <% if @order.total > 0 %>
             <div class="cart_inner">
                 <div class="table">
                     <table class="table table-hover">
@@ -37,6 +38,24 @@
                     </div>
                 </div>
             </div>
+            <% else %>
+            <h1>Your cart is empty!</h1>
+              <section class="section-margin calc-60px">
+                 <div class="container">
+                     <hr>
+                  <div class="section-intro pb-60px">
+                     <p>Our latest trends</p>
+                     <h2> Best <span class="section-intro__style">Sellers</span></h2>
+                 </div>
+                 <div class="owl-carousel owl-theme" id="bestSellerCarousel">
+                    <% @items.each do |item| %>
+                    <%= render 'shared/card', item: item %>
+             <% end %>
+        </div>
+            <hr>
+      </div>
+    </section>
+            <% end %>
         </div>
 </section>
   <!--================ end Cart Area =================-->
