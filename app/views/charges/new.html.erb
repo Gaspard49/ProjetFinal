@@ -47,18 +47,18 @@
           <div class="order_box">
             <h2>Your Order</h2>
             <ul class="list">
-              <li><a href="#">
+              <li>
                   <h4>Product <span>Total</span></h4>
-                </a></li>
+              </li>
 
               <% @order.items.each do |item| %>
-              <li><a href="#"><%= render 'shared/itemsCheckout', item: item %></a></li>
+              <li><%= render 'shared/itemsCheckout', item: item %></li>
               <% end %>
 
             </ul>
             <ul class="list list_2">
-              <h4>(shipping free) </h4>
-              <li><a href="#">Total <span><%= @order.total%> €</span></a></li>
+              <h4>"Shipping free" </h4>
+              <li>Total <span><%= @order.total%> €</span></li>
             </ul>
 
 

@@ -3,5 +3,8 @@
       <% item.categories.each do |category| %>
         <%=  category.name %>
       <% end %>
-      <span class="middle">x 01</span> <span class="last"><%= item.price%> €</span></a>
+      <span class="ml-3">x 01</span> <span class="ml-3"><%= item.price%> €</span></a>
 </li>
+<% @item_order.each do |i| %>
+   <%= i.quantity %>
+<% end %>

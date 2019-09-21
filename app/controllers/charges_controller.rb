@@ -9,6 +9,7 @@ class ChargesController < ApplicationController
 
   def new
     @user = current_user
+    @item_order = ItemOrder.where("order_id = ?", @order.id)
   end
 
   def index
