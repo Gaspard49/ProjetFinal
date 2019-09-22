@@ -1,5 +1,4 @@
 class HomeController < ApplicationController
-    include CurrentCart
     
     def index
         @items = Item.all
