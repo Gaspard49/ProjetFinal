@@ -43,5 +43,4 @@ class OrdersController < ApplicationController
       redirect_to new_order_path
   end
 
-  
 end
