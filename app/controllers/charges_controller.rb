@@ -17,7 +17,8 @@ class ChargesController < ApplicationController
   
   def create
     # Amount in cents
-    @item_order = ItemOrder.all
+    @item_order = ItemOrder.where("order_id = ?", @order.id)
+
     @user = current_user
     @amount = @order.total * 100
     @amount = @amount.to_i
