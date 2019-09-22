@@ -1,6 +1,7 @@
 module CurrentCart
     
-    private    
+    private
+     
     def set_cart
         if current_user.orders.last.status != true
             @order = Order.create(user_id: current_user.id, status: true)
