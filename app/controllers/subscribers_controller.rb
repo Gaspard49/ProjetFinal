@@ -9,7 +9,7 @@ class SubscribersController < ApplicationController
         flash[:notice] = "You are successfully registered."
         redirect_to root_path
       else
-        flash[:alert] = "Try another email"
+        flash[:alert] = "Email already taken or not in the right format"
         redirect_to root_path
       end
   end

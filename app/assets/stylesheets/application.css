@@ -25,6 +25,19 @@
  *= require main.css
  */
 
+ .duo-cart-count{
+   position: relative;
+ }
+
+ .count-item{ 
+   position: absolute;
+   top: 0;
+   right: 0;
+   border-radius: 50%;
+   font-weight: bold;
+   transform: translate(100%, -60%);
+ }
+
  .itemCardIcon{
   font-size: 1em; color: red;
 
