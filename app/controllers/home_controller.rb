@@ -1,6 +1,5 @@
 class HomeController < ApplicationController
     include CurrentCart
-    before_action :set_cart, only: [:create]
     
     def index
         @items = Item.all
