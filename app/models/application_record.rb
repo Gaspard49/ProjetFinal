@@ -8,9 +8,4 @@ class ApplicationRecord < ActiveRecord::Base
    end
      return sum.round(2)
   end
-
-  def jack
-    return "jack"
-  end
-
 end
