@@ -21,16 +21,17 @@
               <th scope="col">Product</th>
               <th scope="col">Title</th>
               <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
             </tr>
           </thead>
           <tbody class="tbody">
-            <% @order.items.each do |item| %>
+            <% @last_order_detail.items.each do |item| %>
               <%= render 'shared/showItemsCard', item: item %>
             <% end %>
           </tbody>
         </table>
         <div class="d-flex flex-column align-items-end">
-          <h1><%= @order.total %> €</h1>
+          <h1><%= @last_order_detail.total %> €</h1>
         </div>
       </div>
     </div>

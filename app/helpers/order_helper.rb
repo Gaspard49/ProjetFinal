@@ -6,4 +6,5 @@ module OrderHelper
         end
         return sum
     end
+
 end

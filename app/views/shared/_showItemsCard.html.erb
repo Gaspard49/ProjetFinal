@@ -12,4 +12,11 @@
     <td>
         <h5><%= item.price %></h5>
     </td>
+    <td>
+        <% @last_order_detail.item_orders.each do |i| %>
+            <% if i.item_id == item.id %>
+                <%= i.quantity %>
+            <%end%>
+        <%end%>
+    </td>
 </tr>
