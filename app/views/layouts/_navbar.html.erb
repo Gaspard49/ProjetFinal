@@ -59,7 +59,8 @@
                 <div class="duo-cart-count">
                   <%= link_to '<i class="fas fa-shopping-cart"></i>'.html_safe, new_order_path, controller: "orders", data: { turbolinks: false } %>
                   <% if current_user.orders.last.status === true %>
-                    <span class="count-item"><%= current_user.orders.last.items.count %></span>
+                    <span class="count-item"><%= sum_quantity_of_items(current_cart) %>
+                    </span>
                   <% else %>
                     <span class="count-item">0</span>
                   <% end %>
@@ -77,6 +78,3 @@
       </nav>
     </div>
   </header>
-
-
-  
