@@ -16,10 +16,11 @@ class OrdersController < ApplicationController
 
   def create 
       item = Item.find(params[:format])
+     
       if @order.items.include?(item)
-          @i = ItemOrder.where("item_id = ?", item.id)
-          @i.first.quantity += 1
-          @i.first.save
+        @item_order = @order.item_orders.where("item_id = ?", item.id)
+        @item_order[0].quantity += 1
+        @item_order[0].save
       else
           @order.items << item
       end
@@ -31,12 +32,13 @@ class OrdersController < ApplicationController
 
   def destroy    
       item = Item.find(params[:id])
-      @item_order = ItemOrder.where("order_id = ?", @order.id)
-      i = @item_order.where("item_id = ?", item.id)
       
-      value = i.map { |x| x.quantity }
+      #@item_order = ItemOrder.where("order_id = ?", @order.id)
+      #i = @item_order.where("item_id = ?", item.id)
+      @item_order = @order.item_orders.where("item_id = ?", item.id)
+
+      item.stock += @item_order[0].quantity
       @order.items.delete(item)
-      item.stock += value[0]
       item.save
      
       flash[:alert] = "Your item has been removed."
