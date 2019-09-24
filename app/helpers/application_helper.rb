@@ -8,7 +8,8 @@ module ApplicationHelper
         end
       end
 
-      def current_cart
-        @order = current_user.orders.last
+      def cart_navbar
+        @order = current_user.orders.where("status = ?", true)
+        return @order[0]
       end
 end
