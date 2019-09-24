@@ -19,4 +19,7 @@ class ApplicationController < ActionController::Base
     @categories = Category.all
   end
 
+  def toto
+    franc = "franc"
+  end
 end
