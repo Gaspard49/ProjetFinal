@@ -3,7 +3,8 @@
         <%= order.created_at.strftime("%Y-%m-%d") %>
     </td>
     <td>
-        <%= order.items.count %>
+        <%= sum_quantity_of_items(order) %>
+
     </td>
     <td>
         <%= order.total %>

@@ -33,8 +33,6 @@ class OrdersController < ApplicationController
   def destroy    
       item = Item.find(params[:id])
       
-      #@item_order = ItemOrder.where("order_id = ?", @order.id)
-      #i = @item_order.where("item_id = ?", item.id)
       @item_order = @order.item_orders.where("item_id = ?", item.id)
 
       item.stock += @item_order[0].quantity
